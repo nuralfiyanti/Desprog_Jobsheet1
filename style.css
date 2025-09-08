@@ -19,8 +19,11 @@ h2{
     padding: 50px;
 }
 
-body{
-    background: url('img/tree1.jpg'), url('img/field1.jpg');
+body {
+    background: url('img/tree1.png'), url('img/field1.jpg');
     background-repeat: no-repeat, no-repeat;
+    background-size: contain, cover;  
+    background-position: right, right bottom; 
     color: white;
 }
+
