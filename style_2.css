@@ -5,64 +5,35 @@ html, body {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    background-color: #ddd;
     line-height: 1.65;
-    display: flex;             
-    justify-content: center;    
+    padding-bottom: 1000px;
 }
 
-/* Container utama */
+/*Latihan 1*/
 .container-satu {
-    width: 80%;          
-    max-width: 1000px;   
-    margin: 50px auto;   
+    width: 800px;
+    margin: 50 px auto;
     background-color: #fff;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
-    gap: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Sidebar kiri */
-.sidebar-satu {
-    flex: 1;
-    background: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.sidebar-satu h3 {
-    margin-top: 0;
-}
-
-.sidebar-satu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar-satu ul li {
-    margin-bottom: 8px;
-}
-
-.sidebar-satu ul li a {
-    text-decoration: none;
-    color: #3366cc;
-}
-
-/* Konten utama */
 .kolom-utama {
-    flex: 3;
-    background: #fafafa;
-    padding: 15px;
-    border-radius: 8px;
+    flex: 3;             /*mengatur lebar kolom utama(artikel)*/
+    padding: 0 20px;
 }
 
-/* Sidebar kanan */
+
+/* kiri */
+.sidebar-satu {
+    flex: 1;             /* Lebar lebih kecil */
+    margin-right: 20px;
+}
+
+/*kanan */
 .sidebar-dua {
     flex: 1;
-    background: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
+    margin-left: 20px
 }

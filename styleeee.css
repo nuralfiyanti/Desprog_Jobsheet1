@@ -1,0 +1,47 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: image('img/bg.jpg');
+    Line-height: 1.65;
+    padding-bottom: 1000px;
+}
+
+.container-satu{
+    width: 800px;
+    margin: 50px auto;
+    background-color: plum;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 20px;
+    border: solid 1px #ccc;
+}
+
+.sidebar-satu{
+    order:-1;
+    flex:0 0 155px;
+}
+
+.sidebar-satu a{
+    text-decoration: none;
+    color: whitesmoke;
+    transition: all 0.3s ease;
+}
+
+.sidebar-satu a:hover{
+    color: powderblue;
+}
+
+
+.sidebar-dua{
+    flex:0 0 150px;
+}
+
+.image{
+    width: 100%;
+}
