@@ -35,4 +35,17 @@ echo "a > b ? "; var_dump($hasilLebihBesar); echo "<br>";
 echo "a <= b ? "; var_dump($hasilLebihKecilSama); echo "<br>";
 echo "a >= b ? "; var_dump($hasilLebihBesarSama); echo "<br>";
 
+echo "<hr>";
+echo "<h3>Operator Logika</h3>";
+
+$hasilAnd  = $a && $b;
+$hasilOr   = $a || $b;
+$hasilNotA = !$a;
+$hasilNotB = !$b;
+
+echo "a && b = "; var_dump($hasilAnd); echo "<br>";
+echo "a || b = "; var_dump($hasilOr); echo "<br>";
+echo "!a = "; var_dump($hasilNotA); echo "<br>";
+echo "!b = "; var_dump($hasilNotB); echo "<br>";
+
 ?>
