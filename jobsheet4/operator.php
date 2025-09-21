@@ -48,4 +48,14 @@ echo "a || b = "; var_dump($hasilOr); echo "<br>";
 echo "!a = "; var_dump($hasilNotA); echo "<br>";
 echo "!b = "; var_dump($hasilNotB); echo "<br>";
 
+echo "<hr>";
+echo "<h3>Operator Penugasan</h3>";
+
+$a = 10; $b = 5;
+$a += $b; echo "a += b → $a <br>";
+$a -= $b; echo "a -= b → $a <br>";
+$a *= $b; echo "a *= b → $a <br>";
+$a /= $b; echo "a /= b → $a <br>";
+$a %= $b; echo "a %= b → $a <br>";
+
 ?>
