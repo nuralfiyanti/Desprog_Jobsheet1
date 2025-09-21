@@ -97,4 +97,13 @@ echo "Harga produk: Rp {$hargaProduk} <br>";
 echo "Diskon: Rp {$diskon} <br>";
 echo "Harga yang harus dibayar: Rp {$hargaBayar} <br>";
 
+echo "<hr>";
+echo "<h3>Soal 4.8</h3>";
+
+$totalSkor = 550; // Contoh total skor
+$hadiah = ($totalSkor > 500) ? "YA" : "TIDAK";
+
+echo "Total skor pemain adalah: {$totalSkor} <br>";
+echo "Apakah pemain mendapatkan hadiah tambahan? {$hadiah} <br>";
+
 ?>
