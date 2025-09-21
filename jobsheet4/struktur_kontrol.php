@@ -81,4 +81,20 @@ $totalNilai = array_sum($nilaiSiswa);
 
 echo "Total nilai (setelah mengabaikan 2 tertinggi dan 2 terendah) adalah: $totalNilai <br>";
 
+echo "<hr>";
+echo "<h3>Soal 4.7</h3>";
+
+$hargaProduk = 120000;
+$diskon = 0;
+
+if ($hargaProduk > 100000) {
+    $diskon = 0.20 * $hargaProduk;
+}
+
+$hargaBayar = $hargaProduk - $diskon;
+
+echo "Harga produk: Rp {$hargaProduk} <br>";
+echo "Diskon: Rp {$diskon} <br>";
+echo "Harga yang harus dibayar: Rp {$hargaBayar} <br>";
+
 ?>
