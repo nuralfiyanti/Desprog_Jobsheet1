@@ -60,5 +60,25 @@ foreach ($nilaiSiswa as $nilai) {
     }
     echo "Nilai: $nilai (Lulus) <br>";
 }
+echo "<hr>";
+echo "<h3>Soal 4.6</h3>";
+
+$nilaiSiswa = [85, 92, 78, 64, 90, 75, 88, 79, 70, 96];
+
+// nilai dari kecil ke besar
+sort($nilaiSiswa);
+
+// Buang 2 nilai terendah
+array_shift($nilaiSiswa);
+array_shift($nilaiSiswa);
+
+// Buang 2 nilai tertinggi
+array_pop($nilaiSiswa);
+array_pop($nilaiSiswa);
+
+// Hitung total nilai setelah dibuang
+$totalNilai = array_sum($nilaiSiswa);
+
+echo "Total nilai (setelah mengabaikan 2 tertinggi dan 2 terendah) adalah: $totalNilai <br>";
 
 ?>
