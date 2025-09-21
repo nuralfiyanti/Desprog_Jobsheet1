@@ -58,4 +58,14 @@ $a *= $b; echo "a *= b → $a <br>";
 $a /= $b; echo "a /= b → $a <br>";
 $a %= $b; echo "a %= b → $a <br>";
 
+echo "<hr>";
+echo "<h3>Operator Identitas</h3>";
+
+$a = 10; $b = "10";
+$hasilIdentik       = $a === $b;
+$hasilTidakIdentik  = $a !== $b;
+
+echo "a === b ? "; var_dump($hasilIdentik); echo "<br>";
+echo "a !== b ? "; var_dump($hasilTidakIdentik); echo "<br>";
+
 ?>
