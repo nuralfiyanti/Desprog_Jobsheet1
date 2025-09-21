@@ -18,4 +18,21 @@ echo "Hasil Perkalian (a * b) = {$hasilKali} <br>";
 echo "Hasil Pembagian (a / b) = {$hasilBagi} <br>";
 echo "Hasil Sisa Bagi (a % b) = {$sisaBagi} <br>";
 echo "Hasil Pangkat (a ** b) = {$pangkat} <br>";
+echo "<hr>";
+echo "<h3>Operator Perbandingan</h3>";
+
+$hasilSama            = $a == $b;
+$hasilTidakSama       = $a != $b;
+$hasilLebihKecil      = $a < $b;
+$hasilLebihBesar      = $a > $b;
+$hasilLebihKecilSama  = $a <= $b;
+$hasilLebihBesarSama  = $a >= $b;
+
+echo "a == b ? "; var_dump($hasilSama); echo "<br>";
+echo "a != b ? "; var_dump($hasilTidakSama); echo "<br>";
+echo "a < b ? "; var_dump($hasilLebihKecil); echo "<br>";
+echo "a > b ? "; var_dump($hasilLebihBesar); echo "<br>";
+echo "a <= b ? "; var_dump($hasilLebihKecilSama); echo "<br>";
+echo "a >= b ? "; var_dump($hasilLebihBesarSama); echo "<br>";
+
 ?>
