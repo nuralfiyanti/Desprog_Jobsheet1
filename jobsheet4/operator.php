@@ -68,4 +68,16 @@ $hasilTidakIdentik  = $a !== $b;
 echo "a === b ? "; var_dump($hasilIdentik); echo "<br>";
 echo "a !== b ? "; var_dump($hasilTidakIdentik); echo "<br>";
 
+echo "<h3>3.6 Soal Cerita </h3>";
+
+$totalKursi   = 45;
+$kursiTerisi  = 28;
+$kursiKosong  = $totalKursi - $kursiTerisi;
+$persenKosong = ($kursiKosong / $totalKursi) * 100;
+
+echo "Total kursi: $totalKursi <br>";
+echo "Kursi terisi: $kursiTerisi <br>";
+echo "Kursi kosong: $kursiKosong <br>";
+echo "Persentase kursi kosong: " . round($persenKosong, 2) . "% <br>";
+
 ?>
