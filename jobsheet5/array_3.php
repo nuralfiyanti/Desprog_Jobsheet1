@@ -33,7 +33,7 @@
                     echo "<td>". $movie [2] [1] ."</td>";
                     echo "<td>". $movie [2] [2] ."</td>";
                 echo "</tr>";
-                echo "<tr>";
+                echo "<tr>"; 
                     echo "<td>". $movie [3] [0] ."</td>";
                     echo "<td>". $movie [3] [1] ."</td>";
                     echo "<td>". $movie [3] [2] ."</td>";
