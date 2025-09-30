@@ -8,3 +8,4 @@ function perkenalan(){
 
 //memanggil fungsi yang sudah dibuat
 perkenalan();
+perkenalan();
