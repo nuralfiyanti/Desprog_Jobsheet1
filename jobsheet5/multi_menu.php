@@ -28,7 +28,7 @@ $menu = [
 // Fungsi untuk menampilkan menu
 function tampilkanMenuBertingkat (array $menu) {
     echo "<ul>";
-    foreach ($menu as $item) {
+    foreach ($menu as $key => $item) {
         echo "<li>{$item['nama']}</li>";
     }
     echo "</ul>";
