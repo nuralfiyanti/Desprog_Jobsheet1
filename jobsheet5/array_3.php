@@ -40,5 +40,5 @@
                 echo "</tr>";
             ?>
         </table>
-    </body>
+</body>
 </html>
