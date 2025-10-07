@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="styleTable.css" />
     <script src="jquery-3.7.1.js"></script>
     <script>
         $(document).ready(function () {
-            //menambah baris
+            //tambah baris
             $(".add-row").click(function () {
                 var name = $("#name").val();
                 var email = $("#email").val();
@@ -14,7 +13,7 @@
                     + name + "</td><td>" + email + "</td></tr>";
                 $("table tbody").append(markup);
             });
-            //menghapus baris yang di centang
+            //hapus baris yang di centang
             $(".delete-row").click(function () {
                 $("table tbody").find('input[name="record"]').each(function () {
                     if ($(this).is(":checked")) {
@@ -50,5 +49,4 @@
     </table>
     <button type="button" class="delete-row">Delete Row</button>
 </body>
-
 </html>
