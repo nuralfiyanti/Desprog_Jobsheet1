@@ -2,7 +2,6 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = $_POST["nama"];
     $email = $_POST["email"];
-    $password = $_POST["password"];
     $errors = array();
 
     if (empty($nama)) {
@@ -22,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $error . "<br>";
         }
     } else {
-        echo "Data berhasil dikirim: Nama = $nama , Email = $email <br> Password: [hashed]" . md5($password);
+        echo "Data berhasil dikirim: Nama = $nama , Email = $email";
     }
 }
 ?>
