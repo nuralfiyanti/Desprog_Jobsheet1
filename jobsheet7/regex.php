@@ -29,4 +29,11 @@ if (preg_match($pattern, $text, $matches)) {
     echo "Tidak ada yang cocok!<br>";
 }
 
+$pattern = '/go?d/';
+$text = 'gd god good.';
+if (preg_match_all($pattern, $text, $matches)) {
+    echo "Cocokkan 'go?d': " . implode(', ', $matches[0]) . "<br>";
+} else {
+    echo "Tidak ada yang cocok 'go?d'!<br>";
+}
 ?>
