@@ -36,4 +36,12 @@ if (preg_match_all($pattern, $text, $matches)) {
 } else {
     echo "Tidak ada yang cocok 'go?d'!<br>";
 }
+
+$pattern = '/go{1,2}d/';
+$text = 'gd god good goood.';
+if (preg_match_all($pattern, $text, $matches)) {
+    echo "Cocokkan 'go{1,2}d': " . implode(', ', $matches[0]) . "<br>";
+} else {
+    echo "Tidak ada yang cocok 'go{1,2}d'!<br>";
+}
 ?>
