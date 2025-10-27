@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking List</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    table { border-collapse: collapse; width: 80%; }
+    th, td { border: 1px solid #aaa; padding: 8px; }
+    th { background: #f3f3f3; }
+  </style>
+</head>
+<body>
+  <h2>Daftar Booking</h2>
+  <table id="bookings">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nama Pengguna</th>
+        <th>Film</th>
+        <th>Jumlah Tiket</th>
+        <th>Waktu Booking</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    fetch('/api/bookings')
+      .then(res => res.json())
+      .then(rows => {
+        const tbody = document.querySelector('#bookings tbody');
+        rows.forEach(r => {
+          const tr = `<tr>
+            <td>${r.id}</td>
+            <td>${r.fullname}</td>
+            <td>${r.title}</td>
+            <td>${r.seats}</td>
+            <td>${new Date(r.booked_at).toLocaleString()}</td>
+          </tr>`;
+          tbody.innerHTML += tr;
+        });
+      });
+  </script>
+</body>
+</html>

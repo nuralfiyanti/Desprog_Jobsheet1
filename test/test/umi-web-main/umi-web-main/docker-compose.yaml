@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # --- 1. Service Aplikasi Node.js (Backend & Static Files) ---
+  app:
+    # Menggunakan Dockerfile yang sudah Anda definisikan untuk membangun image
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    container_name: bioskop-app
+    restart: always
+    # Memuat variabel lingkungan dari file .env
+    # env_file:
+    #   - .env
+    # Mengesampingkan DATABASE_URL untuk menggunakan 'db' sebagai hostname
+    # environment:
+    #   # PENTING: Hostname adalah 'db' (nama service database) dan port internal Postgres adalah 5432
+    #   DATABASE_URL: postgres://postgres:Ardhan17@db:5432/testing
+    # Expose port internal 3000 agar bisa diakses oleh Nginx
+    ports:
+      - "8110:3000"
