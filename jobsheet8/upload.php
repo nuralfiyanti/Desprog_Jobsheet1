@@ -4,7 +4,7 @@ if(isset($_POST["submit"])){
     $targetfile = $targetdir. basename($_FILES["myfile"]["name"]);
     
     if (move_uploaded_file($_FILES["myfile"]["tmp_name"], $targetfile)){
-        echo "File berhasil diunggah.";
+        echo "File berhasil diunggah ke folder: ";
     }
     else{
         echo "Gagal mengunggah file.";
