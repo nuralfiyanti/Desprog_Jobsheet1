@@ -1,45 +1,40 @@
 <?php
-if (isset($_FILES['files'])) {
-    $upload_dir = "images/";
+if (isset($_FILES['file'])) {
+    $errors = [];
+    $file_name = $_FILES['file']['name'];
+    $file_size = $_FILES['file']['size'];
+    $file_tmp  = $_FILES['file']['tmp_name'];
+
+    // Ambil ekstensi file
+    $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+
+    // Tentukan ekstensi yang diperbolehkan
+    $allowed_extensions = ["pdf", "doc", "docx", "txt"];
+
+    // Validasi ekstensi
+    if (!in_array($file_ext, $allowed_extensions)) {
+        $errors[] = "Hanya file PDF, DOC, DOCX, atau TXT yang diperbolehkan.";
+    }
+
+    // Validasi ukuran file (maks 2MB)
+    if ($file_size > 2 * 1024 * 1024) {
+        $errors[] = "Ukuran file tidak boleh lebih dari 2 MB.";
+    }
 
     // Buat folder jika belum ada
+    $upload_dir = "documents/";
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0777, true);
     }
 
-    $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
-    $errors = [];
-
-    foreach ($_FILES['files']['tmp_name'] as $key => $tmp_name) {
-        $file_name = $_FILES['files']['name'][$key];
-        $file_size = $_FILES['files']['size'][$key];
-        $file_tmp  = $_FILES['files']['tmp_name'][$key];
-
-        // Ambil ekstensi file
-        $temp = explode('.', $file_name);
-        $file_ext = strtolower(end($temp));
-
-        // Validasi ekstensi
-        if (!in_array($file_ext, $allowed_ext)) {
-            $errors[] = "Ekstensi file $file_name tidak diizinkan (hanya JPG, PNG, GIF).";
-            continue;
-        }
-
-        // Validasi ukuran file (maks 2 MB)
-        if ($file_size > 2097152) {
-            $errors[] = "$file_name melebihi ukuran maksimum (2MB).";
-            continue;
-        }
-
-        // Upload file
+    // Proses upload jika tidak ada error
+    if (empty($errors)) {
         if (move_uploaded_file($file_tmp, $upload_dir . $file_name)) {
-            echo "<p>File $file_name berhasil diunggah</p>";
+            echo "<p style='color:green;'>File <b>$file_name</b> berhasil diunggah!</p>";
         } else {
-            $errors[] = "Gagal mengunggah $file_name.";
+            echo "<p style='color:red;'>Gagal mengunggah file.</p>";
         }
-    }
-
-    if (!empty($errors)) {
+    } else {
         echo "<p style='color:red;'>" . implode("<br>", $errors) . "</p>";
     }
 }
