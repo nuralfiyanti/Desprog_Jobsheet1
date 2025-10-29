@@ -4,17 +4,13 @@ if(isset($_POST["submit"])){
     $targetfile = $targetdir . basename($_FILES["myfile"]["name"]);
     $filetype = strtolower(pathinfo($targetfile, PATHINFO_EXTENSION));
     
-    $allowedExtensions = array("jpg", "jpeg", "png", "gif");
-    $maxsize = 2*1024*1024; 
+    $allowedExtensions = array("text", "pdf", "doc", "docx");
+    $maxsize = 3*1024*1024; 
 
     if (in_array($filetype, $allowedExtensions) && $_FILES["myfile"]["size"] <= $maxsize){
 
         if (move_uploaded_file($_FILES["myfile"]["tmp_name"], $targetfile)){
             echo "File berhasil diunggah.<br>";
-
-            // thumbnail gambar
-            echo "<h3>Preview Gambar:</h3>";
-            echo "<img src='$targetfile' style='width:200px; height:auto;'>";
         }
         else{
             echo "Gagal mengunggah file.";
