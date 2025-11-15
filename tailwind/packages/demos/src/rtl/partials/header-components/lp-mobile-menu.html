@@ -1,0 +1,34 @@
+<div id="application-sidebar-lp"
+    class="lg:hidden hs-overlay hs-overlay-open:translate-x-0 z-[2] -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs bg-white dark:bg-dark  basis-full grow sm:order-1 lg:static block lg:h-auto sm:max-w-none w-[270px] lg:border-r-transparent lg:transition-none lg:translate-x-0  lg:basis-auto  "
+    tabindex="-1" data-hs-overlay-close-on-resize>
+    <div class="">
+        <div class="p-5 pb-0">@@include("../logo-sidebar.html")</div>  
+        <div style="max-height: calc(100vh - 100px);" data-simplebar>
+            <ul class="lg:hidden  block p-5" >
+                <li class="py-3">
+                    @@include("../header-components/dd-menus-lp.html")
+                </li>
+                <li class="py-3">
+                    @@include("../header-components/dd-pages-lp.html")
+                </li>
+                <li class="py-3">
+                    <a href="@@webRoot/docs/index.html" target="_blank"
+                        class="hover:text-primary text-dark dark:text-white text-base">Documentation</a>
+                </li>
+                <li class="py-3">
+                    <a href="https://adminmart.com/support/"
+                        target="_blank"
+                        class="hover:text-primary text-dark dark:text-white text-base">Support</a>
+                </li>
+                <li class="py-3">
+                    <a
+                        href="@@webRoot/rtl/authentication-login.html"
+                        target="_blank"
+                        class="btn btn-md py-2.5 px-4 w-full block">Login</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+</div>

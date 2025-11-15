@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-color-theme="Blue_Theme"
+    class="light selected"
+    data-layout="vertical" data-boxed-layout="boxed" data-card="shadow">
+
+    <head>
+        @@include("partials/head.html")
+        <title>Modernize TailwindCSS HTML Admin Template</title>
+    </head>
+
+    <body class="DEFAULT_THEME bg-white dark:bg-dark">
+        <!-- Toast -->
+        <div id="dismiss-toast"
+            class="toast-onload opacity-0   hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-primary rounded-md"
+            role="alert">
+            <div class="flex gap-2 p-3">
+                <i class="ti ti-alert-circle text-white text-lg"></i>
+                <div>
+                    <h5 class="font-semibold text-white">Welcome to
+                        Modernize</h5>
+                    <p class="text-fs_12 text-white">Easy to costomize the
+                        Template!!!</p>
+                </div>
+                <div class="ms-auto">
+                    <button type="button"
+                        data-hs-remove-element="#dismiss-toast">
+                        <i
+                            class="ti ti-x text-lg text-white opacity-70 leading-none"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- End Toast -->
+        <main>
+            <!--start the project-->
+            <div id="main-wrapper" class="flex">
+
+                <aside id="application-sidebar-brand"
+                    class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full xl:rtl:-translate-x-0 rtl:translate-x-full  left-0 rtl:left-auto rtl:right-0 transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0 with-vertical  left-sidebar transition-all duration-300 h-screen xl:z-[2] z-[60] flex-shrink-0 border-r rtl:border-l rtl:border-r-0 w-[270px] border-border dark:border-darkborder bg-white dark:bg-dark">
+                    @@include("partials/sidebar.html",{ "page":
+                    "music","page_group": "dashboards" })
+                </aside>
+                <div class="page-wrapper  w-full" role="main">
+                    <!--  Header Start -->
+                    <header
+                        class="sticky top-header top-0 inset-x-0 z-[1] flex flex-wrap md:justify-start md:flex-nowrap text-sm  bg-white dark:bg-dark ">
+                        <div
+                            class="with-vertical w-full">@@include("partials/header.html")</div>
+                        <div class="with-horizontal w-full">
+                            <div
+                                class="bg-white dark:bg-dark shadow-md dark:shadow-dark-md">
+                                <div class="container">
+                                    @@include("partials/horizontal-header.html")
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!--  Header End -->
+
+                    <!-- Horizontal Header Menu -->
+                    <aside class="with-horizontal lg:flex hidden">
+                        @@include("partials/horizontal-sidebar.html", { "page":
+                        "music","page_group": "dashboards"
+                        })
+                    </aside>
+                    <!-- Horizontal Header Menu End -->
+
+                    <!-- Main Content -->
+                    <div class="pt-6">
+                        <div class="container full-container py-5">
+
+                            <div class="grid grid-cols-12 gap-6">
+
+                                <div
+                                    class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12">
+                                    <!---Follow Artists Card--->
+                                    <div class="card mb-6">
+                                        <div class="card-body">
+                                            <div class="mb-6">
+                                                <h5
+                                                    class="card-title">Follow
+                                                    Artists
+                                                </h5>
+                                                <p
+                                                    class="card-subtitle">Tips
+                                                    for Following Local
+                                                    Artists</p>
+                                            </div>
+                                            <div class="overflow-auto mt-4"
+                                                data-simplebar>
+                                                <div class="flex gap-5">
+                                                    <a href="#"
+                                                        class="text-center flex-shrink-0 ">
+                                                        <div
+                                                            class="border-2 border-primary rounded-full w-[67px] h-[67px] flex justify-center items-center">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/s1.jpg"
+                                                                class="rounded-full"
+                                                                alt="art"
+                                                                width="55" />
+                                                        </div>
+                                                        <p
+                                                            class="text-sm mt-1 text-bodytext dark:text-darklink">Dualia</p>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="text-center flex-shrink-0 ">
+                                                        <div
+                                                            class="border-2 border-primary rounded-full w-[67px] h-[67px] flex justify-center items-center">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/s2.jpg"
+                                                                class="rounded-full"
+                                                                alt="art"
+                                                                width="55" />
+                                                        </div>
+                                                        <p
+                                                            class="text-sm mt-1 text-bodytext dark:text-darklink">John</p>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="text-center flex-shrink-0 ">
+                                                        <div
+                                                            class="border-2 border-primary rounded-full w-[67px] h-[67px] flex justify-center items-center">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/s3.jpg"
+                                                                class="rounded-full"
+                                                                alt="art"
+                                                                width="55" />
+                                                        </div>
+                                                        <p
+                                                            class="text-sm mt-1 text-bodytext dark:text-darklink">Smith</p>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="text-center flex-shrink-0 group">
+                                                        <div
+                                                            class="border-2 border-transparent group-hover:border-primary rounded-full w-[67px] h-[67px] flex justify-center items-center">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/s4.jpg"
+                                                                class="rounded-full"
+                                                                alt="art"
+                                                                width="55" />
+                                                        </div>
+                                                        <p
+                                                            class="text-sm mt-1 text-bodytext dark:text-darklink">Sia</p>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="text-center flex-shrink-0 group">
+                                                        <div
+                                                            class="border-2 border-transparent group-hover:border-primary rounded-full w-[67px] h-[67px] flex justify-center items-center">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/s1.jpg"
+                                                                class="rounded-full"
+                                                                alt="art"
+                                                                width="55" />
+                                                        </div>
+                                                        <p
+                                                            class="text-sm mt-1 text-bodytext dark:text-darklink">Adele</p>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="text-center flex-shrink-0 group">
+                                                        <div
+                                                            class="border-2 border-transparent group-hover:border-primary rounded-full w-[67px] h-[67px] flex justify-center items-center">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/s2.jpg"
+                                                                class="rounded-full"
+                                                                alt="art"
+                                                                width="55" />
+                                                        </div>
+                                                        <p
+                                                            class="text-sm mt-1 text-bodytext dark:text-darklink">Dualia</p>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="text-center flex-shrink-0 group">
+                                                        <div
+                                                            class="border-2 border-transparent group-hover:border-primary rounded-full w-[67px] h-[67px] flex justify-center items-center">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/s3.jpg"
+                                                                class="rounded-full"
+                                                                alt="art"
+                                                                width="55" />
+                                                        </div>
+                                                        <p
+                                                            class="text-sm mt-1 text-bodytext dark:text-darklink">Sia</p>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="text-center flex-shrink-0 group">
+                                                        <div
+                                                            class="border-2 border-transparent group-hover:border-primary rounded-full w-[67px] h-[67px] flex justify-center items-center">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/s4.jpg"
+                                                                class="rounded-full"
+                                                                alt="art"
+                                                                width="55" />
+                                                        </div>
+                                                        <p
+                                                            class="text-sm mt-1 text-bodytext dark:text-darklink">John</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---Follow Artists Card End--->
+
+                                    <!---Recently Played Card--->
+                                    <div class="card mb-6">
+                                        <div class="card-body">
+                                            <div class="mb-5">
+                                                <h5
+                                                    class="card-title">Recently
+                                                    Played
+                                                </h5>
+                                                <p
+                                                    class="card-subtitle">What's
+                                                    on My Playlist This
+                                                    Week?</p>
+                                            </div>
+                                            <div
+                                                class="grid grid-cols-12 gap-6">
+                                                <div
+                                                    class="lg:col-span-4 md:col-span-4 sm:col-span-12 col-span-12">
+                                                    <div
+                                                        class="card overflow-hidden shadow-none border border-border dark:border-darkborder">
+                                                        <a
+                                                            href="javascript:void(0)">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album5.jpg"
+                                                                class="rounded-md w-full"
+                                                                alt="art" />
+                                                        </a>
+                                                        <div
+                                                            class="p-3 flex justify-between">
+                                                            <div>
+                                                                <h6
+                                                                    class="mb-1  ">
+                                                                    Naach Meri
+                                                                    Rani</h6>
+                                                                <p
+                                                                    class="text-xs text-bodytext dark:text-darklink">Guru
+                                                                    Randhawa</p>
+                                                            </div>
+                                                            <button
+                                                                class="btn p-0 bg-white hover:bg-primary rounded-full h-9 w-9 -mt-7 shadow-sm dark:shadow-none group ">
+                                                                <i
+                                                                    class="ti ti-player-play text-primary text-lg group-hover:text-white"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="lg:col-span-4 md:col-span-4 sm:col-span-12 col-span-12">
+                                                    <div
+                                                        class="card overflow-hidden shadow-none border border-border dark:border-darkborder">
+                                                        <a
+                                                            href="javascript:void(0)">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album7.jpg"
+                                                                class="rounded-md w-full"
+                                                                alt="art" />
+                                                        </a>
+                                                        <div
+                                                            class="p-3 flex justify-between">
+                                                            <div>
+                                                                <h6
+                                                                    class="mb-1">
+                                                                    Party
+                                                                    Anthems</h6>
+                                                                <p
+                                                                    class="text-xs text-bodytext dark:text-darklink">Arijit
+                                                                    Singh
+                                                                </p>
+                                                            </div>
+                                                            <button
+                                                                class="btn p-0 bg-white hover:bg-primary rounded-full h-9 w-9 -mt-7 shadow-sm dark:shadow-none group ">
+                                                                <i
+                                                                    class="ti ti-player-play text-primary text-lg group-hover:text-white"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="lg:col-span-4 md:col-span-4 sm:col-span-12 col-span-12">
+                                                    <div
+                                                        class="card overflow-hidden shadow-none border border-border dark:border-darkborder">
+                                                        <a
+                                                            href="javascript:void(0)">
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album8.jpg"
+                                                                class="rounded-md w-full"
+                                                                alt="art" />
+                                                        </a>
+                                                        <div
+                                                            class="p-3 flex justify-between">
+                                                            <div>
+                                                                <h6
+                                                                    class="mb-1">
+                                                                    Classic
+                                                                    Melody</h6>
+                                                                <p
+                                                                    class="text-xs text-bodytext dark:text-darklink">Jagjit
+                                                                    Singh
+                                                                </p>
+                                                            </div>
+                                                            <button
+                                                                class="btn p-0 bg-white hover:bg-primary  rounded-full h-9 w-9 -mt-7 shadow-sm dark:shadow-none group ">
+                                                                <i
+                                                                    class="ti ti-player-play text-primary text-lg group-hover:text-white"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---Recently Played Card End--->
+
+                                    <!---Favourite Artists Card--->
+                                    <div class="grid grid-cols-12 gap-6">
+                                        <div
+                                            class="lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="mb-5">
+                                                        <h5
+                                                            class="card-title">My
+                                                            Friends
+                                                        </h5>
+                                                        <p
+                                                            class="card-subtitle">The
+                                                            Power of
+                                                            Friendship </p>
+                                                    </div>
+                                                    <div
+                                                        class="flex justify-between items-center">
+                                                        <img
+                                                            src="@@webRoot/assets/images/profile/user-5.jpg"
+                                                            class="rounded-md"
+                                                            width="67"
+                                                            alt="art" />
+                                                        <img
+                                                            src="@@webRoot/assets/images/profile/user-2.jpg"
+                                                            class="rounded-md"
+                                                            width="67"
+                                                            alt="art" />
+                                                        <img
+                                                            src="@@webRoot/assets/images/profile/user-3.jpg"
+                                                            class="rounded-md"
+                                                            width="67"
+                                                            alt="art" />
+                                                        <img
+                                                            src="@@webRoot/assets/images/profile/user-4.jpg"
+                                                            class="rounded-md"
+                                                            width="67"
+                                                            alt="art" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="mb-5">
+                                                        <h5
+                                                            class="card-title">
+                                                            Favourite Artists
+                                                        </h5>
+                                                        <p
+                                                            class="card-subtitle">The
+                                                            Iconic Music of
+                                                            Prince</p>
+                                                    </div>
+                                                    <div
+                                                        class="flex justify-between items-center">
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/s1.jpg"
+                                                            class="rounded-md"
+                                                            width="67"
+                                                            alt="art" />
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/s2.jpg"
+                                                            class="rounded-md"
+                                                            width="67"
+                                                            alt="art" />
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/s3.jpg"
+                                                            class="rounded-md"
+                                                            width="67"
+                                                            alt="art" />
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/s4.jpg"
+                                                            class="rounded-md"
+                                                            width="67"
+                                                            alt="art" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---Favourite Artists Card End--->
+                                </div>
+
+                                <!---Recent Search Card--->
+                                <div
+                                    class="lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="mb-7">
+                                                <h5
+                                                    class="card-title">Recent
+                                                    Search
+                                                </h5>
+                                                <p
+                                                    class="card-subtitle">What's
+                                                    Next in the World of
+                                                    Search?</p>
+                                            </div>
+
+                                            <div
+                                                class="flex gap-3 items-center">
+                                                <div id="dismiss-alert"
+                                                    class="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 rounded-full bg-lightprimary dark:bg-darkprimary text-sm px-3.5 py-1.5 text-primary flex gap-3"
+                                                    role="alert">
+                                                    Shiela On7
+                                                    <button type="button" class
+                                                        data-hs-remove-element="#dismiss-alert">
+                                                        <i
+                                                            class="ti ti-square-x text-sm text-primary"></i>
+                                                    </button>
+                                                </div>
+                                                <div id="dismiss-alert1"
+                                                    class="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 rounded-full bg-lighterror dark:bg-darkerror text-sm px-3.5 py-1.5 text-error flex gap-3"
+                                                    role="alert">
+                                                    Denny Caknan
+                                                    <button type="button" class
+                                                        data-hs-remove-element="#dismiss-alert1">
+                                                        <i
+                                                            class="ti ti-square-x text-sm text-error"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="card bg-lightprimary dark:bg-darkprimary shadow-none mt-7">
+                                                <div class="card-body ">
+                                                    <div class="text-center">
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/album3.jpg"
+                                                            class="rounded-md mx-auto"
+                                                            alt="art" />
+                                                        <h5
+                                                            class="card-title my-4">Party
+                                                            Anthemes</h5>
+                                                        <div
+                                                            class="flex justify-center gap-7">
+                                                            <a
+                                                                href="javascript:void(0)"><i
+                                                                    class="ti ti-repeat text-base opacity-70"></i></a>
+                                                            <a
+                                                                href="javascript:void(0)"><i
+                                                                    class="ti ti-chevrons-left text-base opacity-70"></i></a>
+                                                            <a
+                                                                href="javascript:void(0)"><i
+                                                                    class="ti ti-player-play text-primary text-base "></i></a>
+                                                            <a
+                                                                href="javascript:void(0)"><i
+                                                                    class="ti ti-chevrons-right text-base opacity-70"></i></a>
+                                                            <a
+                                                                href="javascript:void(0)"><i
+                                                                    class="ti ti-arrows-shuffle text-base opacity-70"></i></a>
+                                                        </div>
+                                                        <div
+                                                            class="flex my-3 w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700"
+                                                            role="progressbar"
+                                                            aria-valuenow="25"
+                                                            aria-valuemin="0"
+                                                            aria-valuemax="100">
+                                                            <div
+                                                                class="flex flex-col justify-center rounded-full overflow-hidden bg-primary text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-primary"
+                                                                style="width: 25%"></div>
+                                                        </div>
+                                                        <div
+                                                            class="flex justify-between">
+                                                            <span
+                                                                class="text-sm opacity-70">00:00</span>
+                                                            <i
+                                                                class="ti ti-volume-3 text-base "></i>
+                                                            <span
+                                                                class="text-sm opacity-70">01:10</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-7">
+                                                        <div
+                                                            class="flex justify-between border-b border-border dark:border-darkborder cursor-pointer items-center gap-x-3.5 py-3.5 px-3.5 rounded-md text-sm font-medium hover:bg-lightprimary hover:dark:bg-darkgray">
+                                                            <div
+                                                                class="flex gap-3.5 items-center">
+                                                                <img
+                                                                    src="@@webRoot/assets/images/music/album1.jpg"
+                                                                    class="rounded-md h-11 w-11">
+                                                                <div class>
+                                                                    <h6
+                                                                        class="font-medium">
+                                                                        Viva
+                                                                        Las</h6>
+                                                                    <span
+                                                                        class="text-xs font-normal text-bodytext dark:text-darklink
+                                                                    ">Viva
+                                                                        Las</span>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="hs-dropdown relative inline-flex">
+                                                                <button
+                                                                    id="hs-dropdown-custom-icon-trigger"
+                                                                    class="hs-dropdown-toggle  text-bodytext dark:text-darklink justify-center items-center rounded-full">
+                                                                    <i
+                                                                        class="ti ti-dots-vertical text-lg"></i>
+                                                                </button>
+                                                                <div
+                                                                    class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-52 bg-white shadow-md rounded-md p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700 z-10"
+                                                                    aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                                    <div
+                                                                        class="flex flex-col">
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-share  text-base"></i>Share
+                                                                            </a>
+                                                                        </div>
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-download  text-base"></i>Download
+                                                                            </a>
+                                                                        </div>
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-info-circle text-base"></i>Get
+                                                                                song
+                                                                                Info
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="flex justify-between border-b border-border dark:border-darkborder cursor-pointer items-center gap-x-3.5 py-3.5 px-3.5 rounded-md text-sm font-medium hover:bg-lightprimary hover:dark:bg-darkgray">
+                                                            <div
+                                                                class="flex gap-3.5 items-center">
+                                                                <img
+                                                                    src="@@webRoot/assets/images/music/album2.jpg"
+                                                                    class="rounded-md h-11 w-11">
+                                                                <div class>
+                                                                    <h6
+                                                                        class="font-medium">
+                                                                        As it
+                                                                        Was</h6>
+                                                                    <span
+                                                                        class="text-xs font-normal text-bodytext dark:text-darklink
+                                                                ">As it
+                                                                        Was</span>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="hs-dropdown relative inline-flex">
+                                                                <button
+                                                                    id="hs-dropdown-custom-icon-trigger"
+                                                                    class="hs-dropdown-toggle  text-bodytext dark:text-darklink justify-center items-center rounded-full">
+                                                                    <i
+                                                                        class="ti ti-dots-vertical text-lg"></i>
+                                                                </button>
+                                                                <div
+                                                                    class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-52 bg-white shadow-md rounded-md p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700 z-10"
+                                                                    aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                                    <div
+                                                                        class="flex flex-col">
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-share  text-base"></i>Share
+                                                                            </a>
+                                                                        </div>
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-download  text-base"></i>Download
+                                                                            </a>
+                                                                        </div>
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-info-circle text-base"></i>Get
+                                                                                song
+                                                                                Info
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="flex justify-between border-b border-border dark:border-darkborder cursor-pointer items-center gap-x-3.5 py-3.5 px-3.5 rounded-md text-sm font-medium hover:bg-lightprimary hover:dark:bg-darkgray">
+                                                            <div
+                                                                class="flex gap-3.5 items-center">
+                                                                <img
+                                                                    src="@@webRoot/assets/images/music/album3.jpg"
+                                                                    class="rounded-md h-11 w-11">
+                                                                <div class>
+                                                                    <h6
+                                                                        class="font-medium">
+                                                                        RedTap
+                                                                        A...</h6>
+                                                                    <span
+                                                                        class="text-xs font-normal text-bodytext dark:text-darklink
+                                                            ">RedTap
+                                                                        Anthem</span>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="hs-dropdown relative inline-flex">
+                                                                <button
+                                                                    id="hs-dropdown-custom-icon-trigger"
+                                                                    class="hs-dropdown-toggle  text-bodytext dark:text-darklink justify-center items-center rounded-full">
+                                                                    <i
+                                                                        class="ti ti-dots-vertical text-lg"></i>
+                                                                </button>
+                                                                <div
+                                                                    class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-52 bg-white shadow-md rounded-md p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700 z-10"
+                                                                    aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                                    <div
+                                                                        class="flex flex-col">
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-share  text-base"></i>Share
+                                                                            </a>
+                                                                        </div>
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-download  text-base"></i>Download
+                                                                            </a>
+                                                                        </div>
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-info-circle text-base"></i>Get
+                                                                                song
+                                                                                Info
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="flex justify-between border-b border-border dark:border-darkborder cursor-pointer items-center gap-x-3.5 py-3.5 px-3.5 rounded-md text-sm font-medium hover:bg-lightprimary hover:dark:bg-darkgray">
+                                                            <div
+                                                                class="flex gap-3.5 items-center">
+                                                                <img
+                                                                    src="@@webRoot/assets/images/music/album1.jpg"
+                                                                    class="rounded-md h-11 w-11">
+                                                                <div class>
+                                                                    <h6
+                                                                        class="font-medium">
+                                                                        Viva
+                                                                        Las</h6>
+                                                                    <span
+                                                                        class="text-xs font-normal text-bodytext dark:text-darklink
+                                                                    ">Viva
+                                                                        Las</span>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="hs-dropdown relative inline-flex">
+                                                                <button
+                                                                    id="hs-dropdown-custom-icon-trigger"
+                                                                    class="hs-dropdown-toggle  text-bodytext dark:text-darklink justify-center items-center rounded-full">
+                                                                    <i
+                                                                        class="ti ti-dots-vertical text-lg"></i>
+                                                                </button>
+                                                                <div
+                                                                    class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-52 bg-white shadow-md rounded-md p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700 z-10"
+                                                                    aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                                    <div
+                                                                        class="flex flex-col">
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-share  text-base"></i>Share
+                                                                            </a>
+                                                                        </div>
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-download  text-base"></i>Download
+                                                                            </a>
+                                                                        </div>
+                                                                        <div
+                                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                                            <a
+                                                                                class="flex gap-2 items-center "
+                                                                                href="#">
+                                                                                <i
+                                                                                    class="ti ti-info-circle text-base"></i>Get
+                                                                                song
+                                                                                Info
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---Recent Search Card End--->
+
+                                <!--Top 10 from this week Card--->
+                                <div
+                                    class="lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div
+                                                class="flex items-center justify-between mb-6 ">
+                                                <div>
+                                                    <h5
+                                                        class="card-title">Top
+                                                        10 from
+                                                        this week</h5>
+                                                    <p
+                                                        class="card-subtitle">Based
+                                                        on your
+                                                        preferences</p>
+                                                </div>
+                                                <div class="sm:mt-0 mt-4 ">
+                                                    <div
+                                                        class="hs-dropdown relative inline-flex ">
+                                                        <button
+                                                            id="hs-dropdown-custom-icon-trigger"
+                                                            class="hs-dropdown-toggle h-10 w-10 text-bodytext dark:text-darklink hover:text-primary light-dark-hoverbg  justify-center items-center rounded-full">
+                                                            <i
+                                                                class="ti ti-dots-vertical text-lg"></i>
+                                                        </button>
+
+                                                        <div
+                                                            class="hs-dropdown-menu z-[1] transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-40"
+                                                            aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                            <div
+                                                                class="flex flex-col">
+                                                                <div
+                                                                    class="py-2 px-4 light-dark-hoverbg ">
+                                                                    <a
+                                                                        class="flex gap-2 items-center "
+                                                                        href="#">
+                                                                        <i
+                                                                            class="ti ti-share  text-base"></i>Share
+                                                                    </a>
+                                                                </div>
+                                                                <div
+                                                                    class="py-2 px-4 light-dark-hoverbg ">
+                                                                    <a
+                                                                        class="flex gap-2 items-center "
+                                                                        href="#">
+                                                                        <i
+                                                                            class="ti ti-download  text-base"></i>Download
+                                                                    </a>
+                                                                </div>
+                                                                <div
+                                                                    class="py-2 px-4 light-dark-hoverbg ">
+                                                                    <a
+                                                                        class="flex gap-2 items-center "
+                                                                        href="#">
+                                                                        <i
+                                                                            class="ti ti-info-circle  text-base"></i>Get
+                                                                        Song
+                                                                        Info
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-simplebar
+                                                class="relative -z-0 h-[450px]">
+                                                <div
+                                                    class="flex flex-col gap-6 ">
+                                                    <a
+                                                        href="javascript:void(0)">
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/top10-1.jpg"
+                                                            class="w-full rounded-md"
+                                                            alt="album" />
+                                                    </a>
+                                                    <a
+                                                        href="javascript:void(0)">
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/top10-2.jpg"
+                                                            class="w-full rounded-md"
+                                                            alt="album" />
+                                                    </a>
+                                                    <a
+                                                        href="javascript:void(0)">
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/top10-3.jpg"
+                                                            class="w-full rounded-md"
+                                                            alt="album" />
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Top 10 from this week Card End--->
+
+                                <!--Top Playlist Card--->
+                                <div
+                                    class="lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div
+                                                class="flex items-center justify-between mb-6 ">
+                                                <div>
+                                                    <h5
+                                                        class="card-title">Top
+                                                        Playlist
+                                                    </h5>
+                                                    <p
+                                                        class="card-subtitle">Based
+                                                        on your choice</p>
+                                                </div>
+                                                <div class="sm:mt-0 mt-4 ">
+                                                    <div
+                                                        class="hs-dropdown relative inline-flex ">
+                                                        <button
+                                                            id="hs-dropdown-custom-icon-trigger"
+                                                            class="hs-dropdown-toggle h-10 w-10 text-bodytext dark:text-darklink hover:text-primary light-dark-hoverbg  justify-center items-center rounded-full">
+                                                            <i
+                                                                class="ti ti-dots-vertical text-lg"></i>
+                                                        </button>
+
+                                                        <div
+                                                            class="hs-dropdown-menu z-[1] transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-40"
+                                                            aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                            <div
+                                                                class="flex flex-col">
+                                                                <div
+                                                                    class="py-2 px-4 light-dark-hoverbg ">
+                                                                    <a
+                                                                        class="flex gap-2 items-center "
+                                                                        href="#">
+                                                                        <i
+                                                                            class="ti ti-share  text-base"></i>Share
+                                                                    </a>
+                                                                </div>
+                                                                <div
+                                                                    class="py-2 px-4 light-dark-hoverbg ">
+                                                                    <a
+                                                                        class="flex gap-2 items-center "
+                                                                        href="#">
+                                                                        <i
+                                                                            class="ti ti-download  text-base"></i>Download
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-simplebar
+                                                class="relative border border-border dark:border-darkborder rounded-md -z-0 h-[450px]">
+                                                <div class>
+                                                    <a
+                                                        class="flex justify-between items-center gap-x-3.5 py-3 px-4 text-sm font-medium border-b border-border dark:border-darkborder rounded-t-md hover:bg-lightgray hover:dark:bg-darkprimary"
+                                                        href="javascript:void(0)">
+                                                        <div
+                                                            class="flex gap-3 items-center">
+                                                            <i
+                                                                class="ti ti-player-play text-lg text-dark dark:text-white"></i>
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album1.jpg"
+                                                                class="rounded-md h-10 w-10" />
+                                                            <div class>
+                                                                <h6
+                                                                    class="font-medium">N95</h6>
+                                                                <span
+                                                                    class="text-sm font-normal text-bodytext dark:text-darklink
+                                                                ">Kendrick
+                                                                    Lamar</span>
+                                                            </div>
+                                                        </div>
+                                                        <i
+                                                            class="ti ti-heart text-primary text-lg"></i>
+                                                    </a>
+                                                    <a
+                                                        class="flex justify-between items-center gap-x-3.5 py-3 px-4 text-sm font-medium border-b border-border dark:border-darkborder hover:bg-lightgray hover:dark:bg-darkprimary"
+                                                        href="javascript:void(0)">
+                                                        <div
+                                                            class="flex gap-3 items-center">
+                                                            <i
+                                                                class="ti ti-player-play text-lg text-dark dark:text-white"></i>
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album2.jpg"
+                                                                class="rounded-md h-10 w-10" />
+                                                            <div class>
+                                                                <h6
+                                                                    class="font-medium">Women</h6>
+                                                                <span
+                                                                    class="text-sm font-normal text-bodytext dark:text-darklink
+                                                                ">Doja
+                                                                    Cat</span>
+                                                            </div>
+                                                        </div>
+                                                        <i
+                                                            class="ti ti-heart text-primary text-lg"></i>
+                                                    </a>
+                                                    <a
+                                                        class="flex justify-between items-center gap-x-3.5 py-3 px-4 text-sm font-medium border-b border-border dark:border-darkborder hover:bg-lightgray hover:dark:bg-darkprimary"
+                                                        href="javascript:void(0)">
+                                                        <div
+                                                            class="flex gap-3 items-center">
+                                                            <i
+                                                                class="ti ti-player-play text-lg text-dark dark:text-white"></i>
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album3.jpg"
+                                                                class="rounded-md h-10 w-10" />
+                                                            <div class>
+                                                                <h6
+                                                                    class="font-medium">Wait
+                                                                    For U
+                                                                </h6>
+                                                                <span
+                                                                    class="text-sm font-normal text-bodytext dark:text-darklink
+                                                                ">Future,
+                                                                    Tems</span>
+                                                            </div>
+                                                        </div>
+                                                        <i
+                                                            class="ti ti-heart text-primary text-lg"></i>
+                                                    </a>
+                                                    <a
+                                                        class="flex justify-between items-center gap-x-3.5 py-3 px-4 text-sm font-medium border-b border-border dark:border-darkborder hover:bg-lightgray hover:dark:bg-darkprimary"
+                                                        href="javascript:void(0)">
+                                                        <div
+                                                            class="flex gap-3 items-center">
+                                                            <i
+                                                                class="ti ti-player-play text-lg text-dark dark:text-white"></i>
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album4.jpg"
+                                                                class="rounded-md h-10 w-10" />
+                                                            <div class>
+                                                                <h6
+                                                                    class="font-medium">Blinding
+                                                                    Lights</h6>
+                                                                <span
+                                                                    class="text-sm font-normal text-bodytext dark:text-darklink
+                                                                ">The
+                                                                    Weeknd</span>
+                                                            </div>
+                                                        </div>
+                                                        <i
+                                                            class="ti ti-heart text-bodytext dark:text-darklink text-lg"></i>
+                                                    </a>
+                                                    <a
+                                                        class="flex justify-between items-center gap-x-3.5 py-3 px-4 text-sm font-medium border-b border-border dark:border-darkborder hover:bg-lightgray hover:dark:bg-darkprimary"
+                                                        href="javascript:void(0)">
+                                                        <div
+                                                            class="flex gap-3 items-center">
+                                                            <i
+                                                                class="ti ti-player-play text-lg text-dark dark:text-white"></i>
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album5.jpg"
+                                                                class="rounded-md h-10 w-10" />
+                                                            <div class>
+                                                                <h6
+                                                                    class="font-medium">Cooped
+                                                                    Up
+                                                                </h6>
+                                                                <span
+                                                                    class="text-sm font-normal text-bodytext dark:text-darklink
+                                                                ">Roddy
+                                                                    Ricch</span>
+                                                            </div>
+                                                        </div>
+                                                        <i
+                                                            class="ti ti-heart text-bodytext dark:text-darklink text-lg"></i>
+                                                    </a>
+                                                    <a
+                                                        class="flex justify-between items-center gap-x-3.5 py-3 px-4 text-sm font-medium border-b border-border dark:border-darkborder hover:bg-lightgray hover:dark:bg-darkprimary"
+                                                        href="javascript:void(0)">
+                                                        <div
+                                                            class="flex gap-3 items-center">
+                                                            <i
+                                                                class="ti ti-player-play text-lg text-dark dark:text-white"></i>
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album6.jpg"
+                                                                class="rounded-md h-10 w-10" />
+                                                            <div class>
+                                                                <h6
+                                                                    class="font-medium">N95</h6>
+                                                                <span
+                                                                    class="text-sm font-normal text-bodytext dark:text-darklink
+                                                                ">Roddy
+                                                                    Ricch</span>
+                                                            </div>
+                                                        </div>
+                                                        <i
+                                                            class="ti ti-heart text-primary text-lg"></i>
+                                                    </a>
+                                                    <a
+                                                        class="flex justify-between items-center gap-x-3.5 py-3 px-4 text-sm font-medium border-b border-border dark:border-darkborder hover:bg-lightgray hover:dark:bg-darkprimary"
+                                                        href="javascript:void(0)">
+                                                        <div
+                                                            class="flex gap-3 items-center">
+                                                            <i
+                                                                class="ti ti-player-play text-lg text-dark dark:text-white"></i>
+                                                            <img
+                                                                src="@@webRoot/assets/images/music/album7.jpg"
+                                                                class="rounded-md h-10 w-10" />
+                                                            <div class>
+                                                                <h6
+                                                                    class="font-medium">Party
+                                                                    Anthem</h6>
+                                                                <span
+                                                                    class="text-sm font-normal text-bodytext dark:text-darklink
+                                                            ">Arijit
+                                                                    Singh</span>
+                                                            </div>
+                                                        </div>
+                                                        <i
+                                                            class="ti ti-heart text-primary text-lg"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Top Playlist Card End--->
+
+                                <!--Most Popular this week Card--->
+                                <div
+                                    class="lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="mb-6">
+                                                <h5
+                                                    class="card-title">Most
+                                                    Popular
+                                                    this week</h5>
+                                                <p
+                                                    class="card-subtitle">Based
+                                                    on your preferences
+                                                </p>
+                                            </div>
+                                            <div class="flex flex-col gap-6">
+                                                <div
+                                                    class="flex gap-3 border border-border dark:border-darkborder p-4 rounded-md items-center">
+                                                    <div
+                                                        class="relative flex justify-center items-center h-full">
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/album1.jpg"
+                                                            class="rounded-md"
+                                                            alt="album"
+                                                            width="97" />
+                                                        <div
+                                                            class="absolute  left-0 right-0 flex justify-center items-center">
+                                                            <button
+                                                                class="btn rounded-full h-11 w-11 flex justify-center items-center bg-primary ">
+                                                                <i
+                                                                    class="ti ti-player-play text-lg text-white"></i>
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="font-medium text-lg mb-0 leading-none">
+                                                            Trending Songs</h4>
+                                                        <p
+                                                            class="card-subtitle my-2">Top
+                                                            trending
+                                                            hits, refres..</p>
+                                                        <p
+                                                            class="text-xs text-bodytext dark:text-darklink ">Created
+                                                            by Gaana
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex gap-3 border border-border dark:border-darkborder p-4 rounded-md items-center">
+                                                    <div
+                                                        class="relative flex justify-center items-center h-full">
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/album2.jpg"
+                                                            class="rounded-md"
+                                                            alt="album"
+                                                            width="97" />
+                                                        <div
+                                                            class="absolute  left-0 right-0 flex justify-center items-center">
+                                                            <button
+                                                                class="btn rounded-full h-11 w-11 flex justify-center items-center bg-primary ">
+                                                                <i
+                                                                    class="ti ti-player-play text-lg text-white"></i>
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="font-medium text-lg mb-0 leading-none">
+                                                            Trending Songs</h4>
+                                                        <p
+                                                            class="card-subtitle my-2">Top
+                                                            trending
+                                                            hits, refres..</p>
+                                                        <p
+                                                            class="text-xs text-bodytext dark:text-darklink ">Created
+                                                            by Gaana
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex gap-3 border border-border dark:border-darkborder p-4 rounded-md items-center">
+                                                    <div
+                                                        class="relative flex justify-center items-center h-full">
+                                                        <img
+                                                            src="@@webRoot/assets/images/music/album4.jpg"
+                                                            class="rounded-md"
+                                                            alt="album"
+                                                            width="97" />
+                                                        <div
+                                                            class="absolute  left-0 right-0 flex justify-center items-center">
+                                                            <button
+                                                                class="btn rounded-full h-11 w-11 flex justify-center items-center bg-primary ">
+                                                                <i
+                                                                    class="ti ti-player-play text-lg text-white"></i>
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+                                                    <div>
+                                                        <h4
+                                                            class="font-medium text-lg mb-0 leading-none">
+                                                            Trending Songs</h4>
+                                                        <p
+                                                            class="card-subtitle my-2">Top
+                                                            trending
+                                                            hits, refres..</p>
+                                                        <p
+                                                            class="text-xs text-bodytext dark:text-darklink ">Created
+                                                            by Gaana
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Most Popular this week Card End--->
+
+                            </div>
+                        </divs>
+                        <!-- Main Content End -->
+                    </div>
+                </div>
+                <!--end of project-->
+            </main>
+            @@include("partials/header-components/mobile-menu.html")
+            @@include("partials/header-components/dd-searchbar.html")
+            @@include("partials/header-components/dd-cart.html")
+            @@include("partials/customizer.html")
+            @@include("partials/scripts.html")
+        </body>
+
+    </html>

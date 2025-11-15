@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" data-color-theme="Blue_Theme" class="light selected"
+	data-layout="vertical" data-boxed-layout="boxed" data-card="shadow">
+
+<head>
+	@@include("partials/head.html")
+	<title>Modernize TailwindCSS HTML Admin Template</title>
+    <link rel="stylesheet" href="@@webRoot/node_modules/prismjs/themes/prism-okaidia.min.css">
+</head>
+
+<body class="DEFAULT_THEME bg-white dark:bg-dark">
+	<main>
+		<!--start the project-->
+		<div id="main-wrapper" class="flex">
+
+			<aside id="application-doc-sidebar-brand"
+				class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full xl:rtl:-translate-x-0 rtl:translate-x-full  left-0 rtl:left-auto rtl:right-0 transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0   docs-left-sidebar transition-all duration-300 h-screen xl:z-[2] z-[60] flex-shrink-0 border-r rtl:border-l rtl:border-r-0 w-[270px] border-border dark:border-darkborder bg-white dark:bg-dark">
+				@@include("partials/sidebar.html",{ "page": "docs-color","page_group": "themeUI" })
+			</aside>
+			<div class="page-wrapper w-full" role="main">
+				<header class="topbar position-relative">
+					@@include("./partials/header.html")
+
+				  </header>
+				<!-- Main Content -->
+				<div class=" max-w-full pt-6">
+					<div class="container full-container py-5">
+                        <div class="mt-12">
+                            <!-- ============================================================== -->
+                            <!-- Start Page Content -->
+                            <!-- ============================================================== -->
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                              <h4 class="mb-8 text-lg ">Color</h4>
+                            </div>
+                            <div class="grid grid-cols-12 gap-6">
+                              <div class="col-span-12">
+                                 <div class="card">
+                                  <div class="card-body">
+                                    <h4 class="mb-4 text-lg text-link dark:text-darklink font-medium">1. Added Colors</h4>
+                                    <p class="text-sm mt-2 text-muted mb-6">
+                                        For any change in colors :
+                                        <span class="text-dark dark:text-white font-bold">packages/demos/tailwind.config.js</span>
+                                    </p>
+                                    <pre class="language-js mb-6" tabindex="0">
+                                        <code class="language-js">
+lightsuccess: "var(--color-lightsuccess)",
+lighterror: "var(--color-lighterror)",
+lightinfo: "var(--color-lightinfo)",
+lightwarning: "var(--color-lightwarning)",
+border: "var(--color-border)",
+bordergray: "var(--color-bordergray)",
+lightgray: "var( --color-lightgray)",
+bodytext: "var( --color-bodytext)",
+
+dark: "var(--color-dark)",
+link: "var(--color-link)",
+darklink: "var(--color-darklink)",
+darkborder: "var(--color-darkborder)",
+darkgray: "var(--color-darkgray)",
+darkinfo: "var(--color-darkinfo)",
+darksuccess: "var(--color-darksuccess)",
+darkwarning: "var(--color-darkwarning)",
+darkerror: "var(--color-darkerror)",
+darkprimary: "var(--color-darkprimary)",
+darksecondary: "var(--color-darksecondary)",
+warningemphasis: "var(--color-warning-emphasis)",
+erroremphasis: "var(--color-error-emphasis)",
+successemphasis: "var(--color-success-emphasis)",
+                                          </code>
+                                        </pre>
+                                  </div>
+                                </div> 
+                              </div>
+                              
+                            </div>
+                          </div>
+					</div>
+				</div>
+				<!-- Main Content End -->
+			</div>
+		</div>
+		<!--end of project-->
+		
+	</main>
+
+	@@include("partials/scripts.html")
+    <script src="@@webRoot/node_modules/prismjs/prism.js"></script>
+</body>
+
+</html>

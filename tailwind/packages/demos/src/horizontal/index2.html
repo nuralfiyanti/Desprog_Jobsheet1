@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" data-color-theme="Blue_Theme" class="light selected"
+    data-layout="vertical" data-boxed-layout="boxed" data-card="shadow">
+
+<head>
+    @@include("partials/head.html")
+    <title>Modernize TailwindCSS HTML Admin Template</title>
+</head>
+
+<body class="DEFAULT_THEME bg-white dark:bg-dark">
+	<!-- Toast -->
+<div id="dismiss-toast"
+class="toast-onload opacity-0   hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-primary rounded-md"
+role="alert">
+<div class="flex gap-2 p-3">
+    <i class="ti ti-alert-circle text-white text-lg"></i>
+    <div>
+        <h5 class="font-semibold text-white">Welcome to Modernize</h5>
+        <p class="text-fs_12 text-white">Easy to costomize the Template!!!</p>
+    </div>
+    <div class="ms-auto">
+        <button type="button"
+            data-hs-remove-element="#dismiss-toast">
+            <i class="ti ti-x text-lg text-white opacity-70 leading-none"></i>
+        </button>
+    </div>
+</div>
+</div>
+<!-- End Toast -->
+    <main>
+        <!--start the project-->
+        <div id="main-wrapper" class="flex">
+
+            <aside id="application-sidebar-brand"
+                class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full xl:rtl:-translate-x-0 rtl:translate-x-full  left-0 rtl:left-auto rtl:right-0 transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0 with-vertical  left-sidebar transition-all duration-300 h-screen xl:z-[2] z-[60] flex-shrink-0 border-r rtl:border-l rtl:border-r-0 w-[270px] border-border dark:border-darkborder bg-white dark:bg-dark">
+                @@include("partials/sidebar.html",{ "page": "eCommerce","page_group": "dashboards" })
+            </aside>
+            <div class="page-wrapper w-full" role="main">
+                <!--  Header Start -->
+                <header
+                    class="sticky top-header top-0 inset-x-0 z-[1] flex flex-wrap md:justify-start md:flex-nowrap text-sm  bg-white dark:bg-dark ">
+                    <div class="with-vertical w-full">@@include("partials/header.html")</div>
+                    <div class="with-horizontal w-full">
+                        <div class="bg-white dark:bg-dark shadow-md dark:shadow-dark-md">
+                            <div class="container">
+                                @@include("partials/horizontal-header.html")
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!--  Header End -->
+
+                <!-- Horizontal Header Menu -->
+                <aside class="with-horizontal lg:flex hidden">
+                    @@include("partials/horizontal-sidebar.html", { "page": "eCommerce","page_group": "dashboards"
+                    })
+                </aside>
+                <!-- Horizontal Header Menu End -->
+
+                <!-- Main Content -->
+                <div class="pt-6">
+                    <div class="container full-container py-5">
+
+                        <!---Welcome back Card--->
+                        <div class="grid grid-cols-12 gap-6">
+                            <div class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12">
+                                <div class="card bg-lightprimary dark:bg-darkprimary mb-0 overflow-hidden">
+                                    <div class="card-body pb-10">
+                                        <div class="grid grid-cols-12">
+                                            <div class="lg:col-span-7 md:col-span-7 sm:col-span-12 col-span-12">
+                                                <div class="flex gap-3 items-center mb-7">
+                                                    <div class="rounded-full overflow-hidden">
+                                                        <img src="@@webRoot/assets/images/profile/user-1.jpg"
+                                                            class="h-10 w-10" alt="">
+                                                    </div>
+                                                    <h5 class="text-lg">
+                                                        Welcome back Mathew Anderson!</h5>
+                                                </div>
+                                                <div class="flex gap-6 items-center">
+                                                    <div
+                                                        class="pe-6 rtl:pe-auto rtl:ps-6  border-e border-[#adb0bb] border-opacity-20  dark:border-darkborder">
+                                                        <h3
+                                                            class="flex items-start mb-0 text-3xl">
+                                                            $2,340
+                                                            <i
+                                                                class="ti ti-arrow-up-right text-base  text-success "></i>
+                                                        </h3>
+                                                        <p class="text-sm mt-1">Today’s
+                                                            Sales
+                                                        </p>
+                                                    </div>
+                                                    <div class="">
+                                                        <h3
+                                                            class="flex items-start mb-0 text-3xl">
+                                                            35%
+                                                            <i
+                                                                class="ti ti-arrow-up-right text-base  text-success "></i>
+                                                        </h3>
+                                                        <p class="text-sm mt-1">Overall
+                                                            Performance
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="lg:col-span-5 md:col-span-5 sm:col-span-12 col-span-12">
+                                                <div class="sm:absolute relative right-0 rtl:right-auto rtl:left-0 -bottom-8">
+                                                    <img src="@@webRoot/assets/images/backgrounds/welcome-bg.svg" alt=""
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Welcome back Card End--->
+
+                            <!---Exapnse / Sales card--->
+                            <div class="lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                                <div class="grid grid-cols-12 gap-6">
+                                    <div class="lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                        <div class="card">
+                                            <div class="card-body p-6">
+                                                <h4 class="text-fs_21 mb-2">
+                                                    $10,230</h4>
+                                                <p>Expense
+                                                </p>
+                                                <div id="expense" class="mt-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                        <div class="card">
+                                            <div class="card-body p-6">
+                                                <h4 class="text-fs_21 mb-2">
+                                                    $65,432</h4>
+                                                <p>Sales
+                                                </p>
+                                                <div class="-me-1">
+                                                    <div id="sales" class="sales-chart mt-4"></div>         
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Exapnse / Sales card End-->
+
+                            <!---Revenue Updates card--->
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Revenue
+                                            Updates</h5>
+                                        <p class="card-subtitle mb-5">Overview of Profit</p>
+                                        <div class="flex gap-3 items-center">
+                                            <div class="flex items-center gap-2">
+                                                <i class="ti ti-point-filled text-primary text-lg"></i>
+                                                <p class="text-xs  dark:text-darklink">Footware</p>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <i class="ti ti-point-filled text-secondary text-lg"></i>
+                                                <p class="text-xs  dark:text-darklink">Fashionware</p>
+                                            </div>
+                                        </div>
+                                        <div class="-me-12">
+                                            <div id="revenue-chart" class="revenue-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Revenue Updates card End--->
+
+                            <!---Sales Overview card--->
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">Sales Overview</h5>
+                                        <p class="card-subtitle mb-5">Every Month</p>
+                                        <div id="sales-overview" class="mb-4"></div>
+                                        <div class="flex items-center justify-between mt-6">
+                                            <div class="flex gap-3 items-center">
+                                                <div
+                                                    class="bg-lightprimary dark:bg-darkprimary h-10 w-10 flex justify-center items-center rounded-md">
+                                                    <i class="ti ti-grid-dots text-primary text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="text-base">
+                                                        $23,450
+                                                    </h6>
+                                                    <p class=" dark:text-darklink   ">Profit</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-3 items-center">
+                                                <div
+                                                    class="bg-lightsecondary dark:bg-darksecondary h-10 w-10 flex justify-center items-center rounded-md">
+                                                    <i class="ti ti-grid-dots text-secondary text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="text-base">
+                                                        $23,450
+                                                    </h6>
+                                                    <p class=" dark:text-darklink ">Expance</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Sales Overview card End--->
+                            <div class="lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                                <div class="grid grid-cols-12 gap-6">
+                                    <!---Sales card--->
+                                    <div class="lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div
+                                                    class="h-10 w-10 bg-lightprimary dark:bg-darkprimary rounded-md flex justify-center items-center">
+                                                    <img src="@@webRoot/assets/images/svgs/icon-cart.svg" alt=""
+                                                        class="h-6 w-6">
+                                                </div>
+                                                <div class="-me-11">
+                                                    <div id="sales-two" class="my-4"></div>
+                                                </div>
+                                                <div class="">
+                                                    <h3
+                                                        class="flex items-start text-fs_21">
+                                                        $16.5k
+                                                        <i class="ti ti-arrow-up-right text-base  text-success "></i>
+                                                    </h3>
+                                                    <p class=" mt-1">
+                                                        Sales
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---Growth card--->
+                                    <div class="lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                        <div class="card">
+                                            <div class="card-body ">
+                                                <div
+                                                    class="h-10 w-10 bg-lightsecondary dark:bg-darksecondary rounded-md flex justify-center items-center">
+                                                    <img src="@@webRoot/assets/images/svgs/icon-bar.svg" alt=""
+                                                        class="h-6 w-6">
+                                                </div>
+                                                <div id="growth" class="my-4"></div>
+                                                <div class="">
+                                                    <h3
+                                                        class="flex items-start text-fs_21">
+                                                        24%
+                                                        <i class="ti ti-arrow-up-right text-base  text-success "></i>
+                                                    </h3>
+                                                    <p class=" mt-1">
+                                                        Growth
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---Monthly Earnings card--->
+                                    <div class="col-span-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="grid grid-cols-12 gap-6">
+                                                    <div class="lg:col-span-8 md:col-span-8  col-span-8">
+                                                        <h5
+                                                            class="card-title mb-4">
+                                                            Monthly
+                                                            Earnings
+                                                        </h5>
+
+                                                        <div class="flex items-center mb-3 gap-2">
+                                                            <h4 class="text-xl">
+                                                                $6,820
+                                                            </h4>
+                                                            <span
+                                                                class="rounded-full p-1 bg-lightsuccess dark:bg-darksuccess flex items-center justify-center ">
+                                                                <i class="ti ti-arrow-up-left text-success"></i>
+                                                            </span>
+                                                            <p class="text-dark dark:text-white  mb-0">+9%</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lg:col-span-4 md:col-span-4 col-span-4">
+                                                        <div class="flex justify-end">
+                                                            <div
+                                                                class="text-white bg-lightprimary dark:bg-darkprimary rounded-md h-11 w-11 flex items-center justify-center">
+                                                                <img src="@@webRoot/assets/images/svgs/icon-master-card-2.svg"
+                                                                    alt="" class="h-6 w-6">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="monthly-earning" class="mt-1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---Monthly Earnings card End--->
+
+                                </div>
+                            </div>
+
+                            <!---Weekly Stats Card--->
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Weekly Stats</h5>
+                                        <p class="card-subtitle">Average sales</p>
+                                        <div id="weekly-stats" class="my-8"></div>
+                                        <div class="flex items-center justify-between mb-5 pt-2">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="bg-lightprimary dark:bg-darkprimary h-10 w-10 flex justify-center items-center rounded-md">
+                                                    <i class="ti ti-grid-dots text-primary text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="text-base">Top
+                                                        Sales</h6>
+                                                    <p class=" dark:text-darklink ">Johnathan Doe</p>
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="badge-md bg-lightprimary dark:bg-darkprimary text-primary">+68</span>
+
+                                        </div>
+                                        <div class="flex items-center justify-between mb-5">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="bg-lightsuccess dark:bg-darksuccess h-10 w-10 flex justify-center items-center rounded-md">
+                                                    <i class="ti ti-grid-dots text-success text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="text-base">Best
+                                                        Seller</h6>
+                                                    <p class=" dark:text-darklink ">Footware</p>
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="badge-md bg-lightsuccess dark:bg-darksuccess text-success">+68</span>
+
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="bg-lighterror dark:bg-darkerror h-10 w-10 flex justify-center items-center rounded-md">
+                                                    <i class="ti ti-grid-dots text-error text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="text-base">Most Commented</h6>
+                                                    <p class=" dark:text-darklink ">Fashionware</p>
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="badge-md bg-lighterror dark:bg-darkerror text-error">+68</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Weekly Stats Card End--->
+
+                            <!---Yearly Sales Card--->
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body pb-8">
+                                        <h5 class="card-title">Yearly Sales</h5>
+                                        <p class="card-subtitle">Every month</p>
+                                        <div class="-me-12">
+                                            <div id="salary" class="mb-8 pb-5"></div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex gap-3 items-center">
+                                                <div
+                                                    class="bg-lightprimary dark:bg-darkprimary h-10 w-10 flex justify-center items-center rounded-md">
+                                                    <i class="ti ti-grid-dots text-primary text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <p class=" dark:text-darklink ">Salary</p>
+                                                    <h6 class="text-base">
+                                                        $36,358
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-3 items-center">
+                                                <div
+                                                    class="bg-lightgray dark:bg-darkgray h-10 w-10 flex justify-center items-center rounded-md">
+                                                    <i class="ti ti-grid-dots text-primary text-xl"></i>
+                                                </div>
+                                                <div>
+                                                    <p class=" dark:text-darklink ">Profit</p>
+                                                    <h6 class="text-base">
+                                                        $5,296
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Yearly Sales Card End--->
+
+                            <!--Payment Gateways -->
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body pb-8">
+                                        <h5 class="card-title">Payment Gateways
+                                        </h5>
+                                        <p class="card-subtitle">Platform for Income</p>
+
+                                        <div class="mt-9">
+                                            <div class="flex items-center justify-between mb-6">
+                                                <div class="flex gap-3 items-center">
+                                                    <div
+                                                        class=" bg-lightprimary dark:bg-darkprimary rounded-md flex items-center justify-center h-11 w-11">
+                                                        <img src="@@webRoot/assets/images/svgs/icon-paypal2.svg" alt=""
+                                                            class="h-6 w-6">
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="text-base">
+                                                            PayPal</h6>
+                                                        <p class=" dark:text-darklink ">Big Brands</p>
+                                                    </div>
+                                                </div>
+                                                <p +$6,235</p>
+                                            </div>
+                                            <div class="flex items-center justify-between mb-6">
+                                                <div class="flex gap-3 items-center">
+                                                    <div
+                                                        class=" bg-lightsuccess dark:bg-darksuccess rounded-md flex items-center justify-center h-11 w-11">
+                                                        <img src="@@webRoot/assets/images/svgs/icon-wallet.svg" alt=""
+                                                            class="h-6 w-6">
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="text-base">
+                                                            Wallet</h6>
+                                                        <p class=" dark:text-darklink ">Bill payment</p>
+                                                    </div>
+                                                </div>
+                                                <p pacity-50">
+                                                    +$345</p>
+                                            </div>
+                                            <div class="flex items-center justify-between mb-6">
+                                                <div class="flex gap-3 items-center">
+                                                    <div
+                                                        class=" bg-lightwarning dark:bg-darkwarning rounded-md flex items-center justify-center h-11 w-11">
+                                                        <img src="@@webRoot/assets/images/svgs/icon-credit-card.svg"
+                                                            alt="" class="h-6 w-6">
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="text-base">
+                                                            Credit card</h6>
+                                                        <p class=" dark:text-darklink ">Money reversed
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p >+$2,235</p>
+                                            </div>
+                                            <div class="flex items-center justify-between mb-6">
+                                                <div class="flex gap-3 items-center">
+                                                    <div
+                                                        class=" bg-lighterror dark:bg-darkerror rounded-md flex items-center justify-center h-11 w-11">
+                                                        <img src="@@webRoot/assets/images/svgs/icon-pie2.svg" alt=""
+                                                            class="h-6 w-6">
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="text-base">
+                                                            Refund</h6>
+                                                        <p class=" dark:text-darklink ">Bill payment</p>
+                                                    </div>
+                                                </div>
+                                                <p pacity-50">
+                                                    -$32</p>
+                                            </div>
+                                            <button type="button"
+                                                class="btn-outline text-primary border-primary block w-full hover:bg-primary hover:text-white mt-9">View
+                                                all transactions</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Payment Gateways End-->
+
+                            <!--Recent Transactions Card -->
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body pb-8">
+                                        <h5 class="card-title">Recent Transactions
+                                        </h5>
+                                        <p class="card-subtitle">How to Secure Recent
+                                            Transactions</p>
+
+                                        <div class="mt-6">
+                                            <!-- Item -->
+                                            <div class="flex gap-x-3">
+                                                <div class="w-1/4 text-end">
+                                                    <span class="">09:30</span>
+                                                </div>
+                                                <div
+                                                    class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-border dark:after:bg-darkborder">
+                                                    <div class="relative z-10 w-7 h-7 flex justify-center items-center">
+                                                        <div
+                                                            class="h-3 w-3 rounded-full bg-transparent border-2 border-primary">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-1/4 grow pt-0.5 pb-6">
+                                                    <p class="">
+                                                        Payment received from John Doe of $385.90
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- End Item -->
+                                            <!-- Item -->
+                                            <div class="flex gap-x-3">
+                                                <div class="w-1/4 text-end">
+                                                    <span class="">10:00 am
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-border dark:after:bg-darkborder">
+                                                    <div class="relative z-10 w-7 h-7 flex justify-center items-center">
+                                                        <div
+                                                            class="h-3 w-3 rounded-full bg-transparent border-2 border-info">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-1/4 grow pt-0.5 pb-6">
+                                                    <h6>New sale
+                                                        recorded </h6>
+                                                    <a href="#" class=" text-primary">
+                                                        #ML-3467
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- End Item -->
+                                            <!-- Item -->
+                                            <div class="flex gap-x-3">
+                                                <div class="w-1/4 text-end">
+                                                    <span class="">12:00 am</span>
+                                                </div>
+                                                <div
+                                                    class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-border dark:after:bg-darkborder">
+                                                    <div class="relative z-10 w-7 h-7 flex justify-center items-center">
+                                                        <div
+                                                            class="h-3 w-3 rounded-full bg-transparent border-2 border-success">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-1/4 grow pt-0.5 pb-6">
+                                                    <p class="">
+                                                        Payment was made of $64.95 to Michael
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- End Item -->
+                                            <!-- Item -->
+                                            <div class="flex gap-x-3">
+                                                <div class="w-1/4 text-end">
+                                                    <span class="">09:30 am</span>
+                                                </div>
+                                                <div
+                                                    class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-border dark:after:bg-darkborder">
+                                                    <div class="relative z-10 w-7 h-7 flex justify-center items-center">
+                                                        <div
+                                                            class="h-3 w-3 rounded-full bg-transparent border-2 border-warning">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-1/4 grow pt-0.5 pb-6">
+                                                    <h6>New sale
+                                                        recorded </h6>
+                                                    <a href="#" class=" text-primary">
+                                                        #ML-3467
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- End Item -->
+                                            <!-- Item -->
+                                            <div class="flex gap-x-3">
+                                                <div class="w-1/4 text-end">
+                                                    <span class="">09:30 am</span>
+                                                </div>
+                                                <div
+                                                    class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-border dark:after:bg-darkborder">
+                                                    <div class="relative z-10 w-7 h-7 flex justify-center items-center">
+                                                        <div
+                                                            class="h-3 w-3 rounded-full bg-transparent border-2 border-error">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-1/4 grow pt-0.5 pb-6">
+                                                    <h6>New sale
+                                                        recorded </h6>
+                                                    <a href="#" class=" text-primary">
+                                                        #ML-3467
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- End Item -->
+                                            <!-- Item -->
+                                            <div class="flex gap-x-3">
+                                                <div class="w-1/4 text-end">
+                                                    <span class="">12:00 am</span>
+                                                </div>
+                                                <div
+                                                    class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px]  ">
+                                                    <div class="relative z-10 w-7 h-7 flex justify-center items-center">
+                                                        <div
+                                                            class="h-3 w-3 rounded-full bg-transparent border-2 border-success">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-1/4 grow pt-0.5">
+                                                    <p class="">
+                                                        Payment Done
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- End Item -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--Recent Transactions Card End-->
+
+
+
+                            </div>
+
+                            <div class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body pb-3">
+                                        <div class="sm:flex items-center justify-between mb-6">
+                                            <div>
+                                                <h5 class="card-title">Top
+                                                    Performers</h5>
+                                                <p class="card-subtitle">Best Employees</p>
+                                            </div>
+                                            <div class="sm:mt-0 mt-4">
+                                                <select class="">
+                                                    <option selected>March 2024</option>
+                                                    <option>April 2024</option>
+                                                    <option>May 2024</option>
+                                                    <option>June 2024</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col">
+                                            <div class="-m-1.5 overflow-x-auto">
+                                                <div class="p-1.5 min-w-full inline-block align-middle">
+                                                    <div class="overflow-hidden">
+                                                        <table
+                                                            class="min-w-full divide-y divide-border dark:divide-darkborder">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 ps-0 font-semibold text-dark dark:text-white ">
+                                                                        Assigned</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Progress</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Priority</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Budget</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Chart</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody
+                                                                class="divide-y divide-border dark:divide-darkborder">
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <img src="@@webRoot/assets/images/products/product-1.jpg"
+                                                                                class="rounded-md h-12 w-12"
+                                                                                alt="user " />
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Minecraf App</h6>
+                                                                                <p
+                                                                                    class="text-xs  dark:text-darklink">
+                                                                                    Jason Roy
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4">
+                                                                        73.2%
+                                                                    </td>
+                                                                    <td class="p-4">
+                                                                        <span
+                                                                            class="badge-md bg-lightprimary dark:bg-darkprimary text-primary">Low</span>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4 text-left rtl:text-right">
+                                                                        $3.9K</td>
+                                                                    <td
+                                                                        class="p-4">
+                                                                        <div id="table-chart"></div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <img src="@@webRoot/assets/images/products/product-2.jpg"
+                                                                                class="h-12 w-12 rounded-md"
+                                                                                alt="user " />
+
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Web App Project</h6>
+                                                                                <p
+                                                                                    class="text-xs  dark:text-darklink">
+                                                                                    Mathew Flintoff
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4">
+                                                                        56.8%
+                                                                    </td>
+                                                                    <td class="p-4">
+                                                                        <span
+                                                                            class="badge-md bg-lightwarning dark:bg-darkwarning text-warning">Medium</span>
+                                                                    </td>
+                                                                    <td
+                                                                        class="  whitespace-nowrap  dark:text-darklink p-4 text-left rtl:text-right">
+                                                                        $3.5k</td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4 text-left rtl:text-right">
+                                                                        <div id="table-chart-1"></div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <img src="@@webRoot/assets/images/products/product-3.jpg"
+                                                                                class="h-12 w-12 rounded-md"
+                                                                                alt="user " />
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Modernize Dashboard</h6>
+                                                                                <p
+                                                                                    class="text-xs  dark:text-darklink">
+                                                                                    Anil Kumar
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4">
+                                                                        25%
+                                                                    </td>
+                                                                    <td class="p-4">
+                                                                        <span
+                                                                            class="badge-md bg-lightinfo dark:bg-darkinfo text-info">Very
+                                                                            high</span>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4 text-left rtl:text-right">
+                                                                        $3.5k</td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4 text-left rtl:text-right">
+                                                                        <div id="table-chart-2"></div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <img src="@@webRoot/assets/images/products/product-4.jpg"
+                                                                                class="h-12 w-12 rounded-md"
+                                                                                alt="user " />
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Dashboard Co</h6>
+                                                                                <p
+                                                                                    class="text-xs  dark:text-darklink">
+                                                                                    George Cruize
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4">
+                                                                        96.3%
+                                                                    </td>
+                                                                    <td class="p-4">
+                                                                        <span
+                                                                            class="badge-md bg-lighterror dark:bg-darkerror text-error">High</span>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4 text-left rtl:text-right">
+                                                                        $4.8K</td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap  dark:text-darklink p-4 text-left rtl:text-right">
+                                                                        <div id="table-chart-3"></div>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                <!-- Main Content End -->
+            </div>
+        </div>
+        <!--end of project-->
+    </main>
+    @@include("partials/header-components/mobile-menu.html")
+    @@include("partials/header-components/dd-searchbar.html")
+    @@include("partials/header-components/dd-cart.html")
+    @@include("partials/customizer.html")
+    @@include("partials/scripts.html")
+    <script src="@@webRoot/node_modules/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="@@webRoot/assets/js/dashboards/dashboard2.js"></script>
+    <!-- Toaster  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(()=>{
+                if(document.getElementById('dismiss-toast')){   
+                    document.getElementById('dismiss-toast').classList.add('hs-removing'); 
+                    document.getElementById('dismiss-toast').classList.remove('show-toast'); 
+                    setTimeout(() => {
+                        document.getElementById('dismiss-toast').remove();
+                    }, 300);  
+                }
+                else{}
+            },5000)
+
+            setTimeout(()=>{
+                document.getElementById('dismiss-toast').classList.add('show-toast'); 
+            },1000)
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" data-color-theme="Blue_Theme" class="light selected"
+	data-layout="vertical" data-boxed-layout="boxed" data-card="shadow">
+
+<head>
+	@@include("partials/head.html")
+	<title>Modernize TailwindCSS HTML Admin Template</title>
+    <link rel="stylesheet" href="@@webRoot/node_modules/prismjs/themes/prism-okaidia.min.css">
+</head>
+
+<body class="DEFAULT_THEME bg-white dark:bg-dark">
+	<main>
+		<!--start the project-->
+		<div id="main-wrapper" class="flex">
+
+			<aside id="application-doc-sidebar-brand"
+				class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full xl:rtl:-translate-x-0 rtl:translate-x-full  left-0 rtl:left-auto rtl:right-0 transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0   docs-left-sidebar transition-all duration-300 h-screen xl:z-[2] z-[60] flex-shrink-0 border-r rtl:border-l rtl:border-r-0 w-[270px] border-border dark:border-darkborder bg-white dark:bg-dark">
+				@@include("partials/sidebar.html",{ "page": "change-logo" })
+			</aside>
+			<div class="page-wrapper w-full" role="main">
+				<header class="topbar position-relative">
+					@@include("./partials/header.html")
+
+				  </header>
+				<!-- Main Content -->
+				<div class=" max-w-full pt-6">
+					<div class="container full-container py-5">
+                        <div class="mt-12">
+                            <!-- ============================================================== -->
+                            <!-- Start Page Content -->
+                            <!-- ============================================================== -->
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                              <h4 class="mb-8 text-lg">Change Logo</h4>
+                            </div>
+                            <div class="grid grid-cols-12 gap-6">
+                              <div class="col-span-12">
+                                 <div class="card">
+                                  <div class="card-body">
+                                    <h4 class="mb-4 text-lg text-link dark:text-darklink font-medium">How to Change Logo?</h4>
+                                    <pre class="language-js" tabindex="0">
+                                        <code class="language-js">
+<span class="token comment">// ----------------------------------------------------</span>
+<span class="token comment">// File: package/demos/src/main/partials/logo-sidebar.html</span>
+<span class="token comment">// ----------------------------------------------------    </span>
+
+&#x3C;div class=&#x22;brand-logo flex  items-center &#x22;&#x3E;
+   &#x3C;a href=&#x22;@@webRoot/main/index.html&#x22; class=&#x22;text-nowrap logo-img&#x22;&#x3E;
+   &#x3C;img
+      src=&#x22;@@webRoot/assets/images/logos/dark-logo.svg&#x22;
+      class=&#x22;dark:hidden block rtl:hidden&#x22;
+      alt=&#x22;Logo-Dark&#x22;
+      /&#x3E;
+   &#x3C;img
+      src=&#x22;@@webRoot/assets/images/logos/light-logo.svg&#x22;
+      class=&#x22;dark:block hidden rtl:hidden rtl:dark:hidden&#x22;
+      alt=&#x22;Logo-light&#x22;
+      /&#x3E;
+   &#x3C;img
+      src=&#x22;@@webRoot/assets/images/logos/dark-logo-rtl.svg&#x22;
+      class=&#x22;dark:hidden hidden rtl:block rtl:dark:hidden&#x22;
+      alt=&#x22;Logo-Dark&#x22;
+      /&#x3E;
+   &#x3C;img
+      src=&#x22;@@webRoot/assets/images/logos/light-logo-rtl.svg&#x22;
+      class=&#x22;dark:hidden hidden rtl:hidden rtl:dark:block&#x22;
+      alt=&#x22;Logo-light&#x22;
+      /&#x3E;
+   &#x3C;/a&#x3E;
+&#x3C;/div&#x3E;
+                      
+                                          </code>
+                                        </pre>
+                                  </div>
+                                </div> 
+
+                              </div>
+                            </div>
+                          </div>
+					</div>
+				</div>
+				<!-- Main Content End -->
+			</div>
+		</div>
+		<!--end of project-->
+		
+	</main>
+
+	@@include("partials/scripts.html")
+    <script src="@@webRoot/node_modules/prismjs/prism.js"></script>
+</body>
+
+</html>

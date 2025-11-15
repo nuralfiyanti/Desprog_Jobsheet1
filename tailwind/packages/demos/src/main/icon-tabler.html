@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" data-color-theme="Blue_Theme" class="light selected"
+    data-layout="vertical" data-boxed-layout="boxed" data-card="shadow">
+
+<head>
+    @@include("partials/head.html")
+    <title>Modernize TailwindCSS HTML Admin Template</title>
+</head>
+
+<body class="DEFAULT_THEME bg-white dark:bg-dark">
+
+		
+    <main>
+        <!--start the project-->
+        <div id="main-wrapper" class="flex">
+
+            <aside id="application-sidebar-brand"
+                class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full xl:rtl:-translate-x-0 rtl:translate-x-full  left-0 rtl:left-auto rtl:right-0 transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0 with-vertical  left-sidebar transition-all duration-300 h-screen xl:z-[2] z-[60] flex-shrink-0 border-r rtl:border-l rtl:border-r-0 w-[270px] border-border dark:border-darkborder bg-white dark:bg-dark">
+                @@include("partials/sidebar.html",{ "page": "tabler","page_group": "icons" })
+            </aside>
+            <div class="page-wrapper w-full" role="main">
+                <!--  Header Start -->
+                <header
+                    class="sticky top-header top-0 inset-x-0 z-[1] flex flex-wrap md:justify-start md:flex-nowrap text-sm  bg-white dark:bg-dark ">
+                    <div class="with-vertical w-full">@@include("partials/header.html")</div>
+                    <div class="with-horizontal w-full">
+                        <div class="bg-white dark:bg-dark shadow-md dark:shadow-dark-md">
+                            <div class="container">
+                                @@include("partials/horizontal-header.html")
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!--  Header End -->
+
+                <!-- Horizontal Header Menu -->
+                <aside class="with-horizontal lg:flex hidden">
+                    @@include("partials/horizontal-sidebar.html", { "page": "tabler","page_group": "icons"
+                    })
+                </aside>
+                <!-- Horizontal Header Menu End -->
+
+                <!-- Main Content -->
+                <div class="pt-6">
+                    <div class="container full-container py-5">
+                        <!----Breadcrumb Start---->
+                        @@include("partials/breadcrumb.html", {"title": "Tabler Icons", "subtitle": 'Home'})
+                        <!----Breadcrumb End---->
+
+                        <div class="grid grid-cols-12">
+                            <div class="col-span-12">
+                                <div class="card h-full w-full position-relative overflow-hidden">
+                                    <div class="card-body p-0">
+                                        <iframe src="https://tabler-icons.io/" frameborder="0"
+                                            style="height: calc(100vh - 280px); width: 100%;"
+                                            data-simplebar=""></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Main Content End -->
+            </div>
+        </div>
+        <!--end of project-->
+    </main>
+    @@include("partials/header-components/mobile-menu.html")
+    @@include("partials/header-components/dd-searchbar.html")
+    @@include("partials/header-components/dd-cart.html")
+    @@include("partials/customizer.html")
+    @@include("partials/scripts.html")
+
+</body>
+
+</html>

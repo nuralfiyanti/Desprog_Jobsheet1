@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" data-color-theme="Blue_Theme" class="light selected"
+    data-layout="vertical" data-boxed-layout="boxed" data-card="shadow">
+
+<head>
+    @@include("partials/head.html")
+    <link rel="stylesheet" href="@@webRoot/node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+    <title>Modernize TailwindCSS HTML Admin Template</title>
+</head>
+
+<body class="DEFAULT_THEME bg-white dark:bg-dark">
+    <!-- Toast -->
+<div id="dismiss-toast"
+class="toast-onload opacity-0   hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-primary rounded-md"
+role="alert">
+<div class="flex gap-2 p-3">
+    <i class="ti ti-alert-circle text-white text-lg"></i>
+    <div>
+        <h5 class="font-semibold text-white">Welcome to Modernize</h5>
+        <p class="text-fs_12 text-white">Easy to costomize the Template!!!</p>
+    </div>
+    <div class="ms-auto">
+        <button type="button"
+            data-hs-remove-element="#dismiss-toast">
+            <i class="ti ti-x text-lg text-white opacity-70 leading-none"></i>
+        </button>
+    </div>
+</div>
+</div>
+<!-- End Toast -->
+    <main>
+        <!--start the project-->
+        <div id="main-wrapper" class="flex">
+
+            <aside id="application-sidebar-brand"
+                class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full xl:rtl:-translate-x-0 rtl:translate-x-full  left-0 rtl:left-auto rtl:right-0 transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0 with-vertical  left-sidebar transition-all duration-300 h-screen xl:z-[2] z-[60] flex-shrink-0 border-r rtl:border-l rtl:border-r-0 w-[270px] border-border dark:border-darkborder bg-white dark:bg-dark">
+                @@include("partials/sidebar.html",{ "page": "nft","page_group": "dashboards" })
+            </aside>
+            <div class="page-wrapper w-full" role="main">
+                <!--  Header Start -->
+                <header
+                    class="sticky top-header top-0 inset-x-0 z-[1] flex flex-wrap md:justify-start md:flex-nowrap text-sm  bg-white dark:bg-dark ">
+                    <div class="with-vertical w-full">@@include("partials/header.html")</div>
+                    <div class="with-horizontal w-full">
+                        <div class="bg-white dark:bg-dark shadow-md dark:shadow-dark-md">
+                            <div class="container">
+                                @@include("partials/horizontal-header.html")
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!--  Header End -->
+
+                <!-- Horizontal Header Menu -->
+                <aside class="with-horizontal lg:flex hidden">
+                    @@include("partials/horizontal-sidebar.html", { "page": "nft","page_group": "dashboards"
+                    })
+                </aside>
+                <!-- Horizontal Header Menu End -->
+
+                <!-- Main Content -->
+                <div class="pt-6">
+                    <div class="container full-container py-5">
+
+                        <div class="grid grid-cols-12 gap-6">
+                            <!---Top Collectibles Card--->
+                            <div class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body pb-4">
+                                            <h5 class="card-title">Top Collectibles
+                                            </h5>
+                                            <p class="card-subtitle mb-5">The Beginner's Guide to
+                                                Collectible Items</p>
+
+
+                                            <div class="owl-carousel collectibles-carousel owl-theme -z-1">
+                                                <div class="item">
+                                                    <div
+                                                        class="card shadow-none overflow-hidden mb-4 border border-border dark:border-darkborder">
+                                                        <div class="relative">
+                                                            <img src="@@webRoot/assets/images/nft/1.jpg" class="w-full"
+                                                                alt="1" />
+                                                            <div class="card-img-overlay absolute top-3 right-3">
+                                                                <div class="text-end">
+                                                                    <span
+                                                                        class="badge bg-dark rounded-full py-1 px-3 text-xs  text-white">04h
+                                                                        09m 12s</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-5 text-left rtl:text-right">
+                                                            <h6
+                                                                class="text-base">
+                                                                Geo Runners</h6>
+                                                            <div class="flex items-center mt-3 mb-4 justify-between ">
+                                                                <div >Volume</div>
+                                                                <h6 class="flex items-center">
+
+                                                                    <span class=" text-dark dark:text-white
+                                                                    ">10.1</span> ETH
+                                                                    <img src="@@webRoot/assets/images/svgs/icon-etherium.svg" 
+                                                                    alt="icon"  class="text-left icon-white ms-1 "/>
+                                                                </h6>
+                                                            </div>
+                                                            <button class="btn w-full ">Place a Bid</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div
+                                                        class="card shadow-none overflow-hidden mb-4 border border-border dark:border-darkborder">
+                                                        <div class="relative">
+                                                            <img src="@@webRoot/assets/images/nft/5.jpg" class="w-full"
+                                                                alt="1" />
+                                                            <div class="card-img-overlay absolute top-3 right-3">
+                                                                <div class="text-end">
+                                                                    <span
+                                                                        class="badge bg-dark rounded-full py-1 px-3 text-xs  text-white">02h
+                                                                        10m 30s</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-5 text-left rtl:text-right">
+                                                            <h6
+                                                                class="text-base">
+                                                                Cube Runner</h6>
+                                                            <div class="flex items-center mt-3 mb-4 justify-between ">
+                                                                <div >Volume</div>
+                                                                <h6 class="flex items-center">
+
+                                                                    <span class=" text-dark dark:text-white
+                                                                ">10.1</span> ETH
+                                                                <img src="@@webRoot/assets/images/svgs/icon-etherium.svg" 
+                                                                    alt="icon"  class="text-left icon-white ms-1 "/>
+                                                                </h6>
+                                                            </div>
+                                                            <button class="btn w-full ">Place a Bid</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div
+                                                        class="card shadow-none overflow-hidden mb-4 border border-border dark:border-darkborder">
+                                                        <div class="relative">
+                                                            <img src="@@webRoot/assets/images/nft/3.jpg" class="w-full"
+                                                                alt="1" />
+                                                            <div class="card-img-overlay absolute top-3 right-3">
+                                                                <div class="text-end">
+                                                                    <span
+                                                                        class="badge bg-dark rounded-full py-1 px-3 text-xs  text-white">01h
+                                                                        02m 10s</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="p-5 text-left rtl:text-right">
+                                                            <h6
+                                                                class="text-base">
+                                                                Algo cube</h6>
+                                                            <div class="flex items-center mt-3 mb-4 justify-between ">
+                                                                <div >Volume</div>
+                                                                <h6 class="flex items-center">
+
+                                                                    <span class=" text-dark dark:text-white
+                                                                ">10.1</span> ETH
+                                                                <img src="@@webRoot/assets/images/svgs/icon-etherium.svg" 
+                                                                    alt="icon"  class="text-left icon-white ms-1 "/>
+                                                                </h6>
+                                                            </div>
+                                                            <button class="btn w-full ">Place a Bid</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!---Top Collectibles Card End--->
+
+                            <!---My Wallets Card--->
+                            <div class="lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">My Wallets
+                                        </h5>
+                                        <p class="card-subtitle mb-5">Smart Wallets for the
+                                            Digital Age</p>
+                                        <div class="card overflow-hidden ">
+                                            <img src="@@webRoot/assets/images/backgrounds/my-card.jpg" class=" w-full"
+                                                alt="bg-card">
+                                            <div class="absolute card-body p-4 h-full top-0 start-0 end-0">
+
+                                                <div class="flex flex-col h-full items-start ">
+                                                    <div>
+                                                        <img src="@@webRoot/assets/images/nft/mastercard.png" width="40"
+                                                            alt="mastercard" />
+                                                        <span class="opacity-75 text-white text-xs block mt-3">CARD
+                                                            NUMBER</span>
+                                                        <h4 class="text-white text-xl">2500 1520 2315 4500</h4>
+                                                    </div>
+                                                    <div class="flex items-center justify-between mt-auto w-full">
+                                                        <div>
+                                                            <span class="opacity-75 text-white text-xs uppercase">Card
+                                                                Holder
+                                                                Name</span>
+                                                            <h6 class="text-white ">HR John</h6>
+                                                        </div>
+                                                        <div>
+                                                            <span
+                                                                class="opacity-75 text-white text-xs uppercase">Expires
+                                                                On</span>
+                                                            <h6 class="text-white ">09/25</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center justify-between py-5">
+                                            <h3 class="text-3xl font-semibold text-dark dark:text-white">$1,206.89</h3>
+                                            <div class="hs-dropdown relative inline-flex">
+                                                <button id="hs-dropdown-custom-icon-trigger" type="button"
+                                                    class="hs-dropdown-toggle flex justify-center items-center ">
+                                                    <i class="ti ti-dots text-bodytext dark:text-darklink "></i>
+                                                </button>
+
+                                                <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-40 z-[1]"
+                                                    aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                    <div class="flex flex-col">
+                                                        <div
+                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                            <a class=" flex gap-2 items-center "
+                                                                href="#">
+                                                                <i class="ti ti-share  text-base"></i>Share </a>
+                                                        </div>
+                                                        <div
+                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                            <a class=" flex gap-2 items-center "
+                                                                href="#">
+                                                                <i class="ti ti-download  text-base"></i>Download </a>
+                                                        </div>
+                                                        <div
+                                                            class="py-2 px-4 light-dark-hoverbg ">
+                                                            <a class=" flex gap-2 items-center "
+                                                                href="#">
+                                                                <i class="ti ti-info-circle  text-base"></i>Get Info
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="">
+                                                <i class="ti ti-arrow-up-left text-success"></i>
+                                            </span>
+                                            <span class="text-dark dark:text-white ">USD 420,000</span>
+                                            <span class="text-success font-semibold ">(59,11%)</span>
+                                        </div>
+                                        <button
+                                            class="btn btn-light-primary px-4 mt-4">
+                                            View Balance
+                                        </button>
+
+                                        
+
+
+                                    </div>
+                                </div>
+                                <!---My Wallets Card End--->
+                            </div>
+                            <!---My Wallets Card End--->
+
+                            <!---Top NFT Table--->
+                            <div class="lg:col-span-8 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <div class="sm:flex items-center justify-between mb-10">
+                                            <div>
+                                                <h5 class="card-title">Top NFT</h5>
+                                                <p class="card-subtitle">How to Buy and Sell NFTs
+                                                </p>
+                                            </div>
+                                            <div class="sm:mt-0 mt-4">
+                                                <div
+                                                    class="hs-dropdown [--strategy:absolute] [--adaptive:none]  sm:relative sm:block hidden">
+                                                    <a id="hs-dropdown-hover-event-lang"
+                                                        class="relative hs-dropdown-toggle btn bg-lightprimary dark:bg-darkprimary icon-hover cursor-pointer  light-dark-hoverbg flex gap-2 justify-center items-center rounded-md text-dark dark:text-white">
+                                                        <img src="@@webRoot/assets/images/svgs/icon-flag-us.svg" 
+                                                                    alt="icon"/>
+                                                        USD
+                                                        <i class="ti ti-chevron-down "></i>
+                                                    </a>
+
+                                                    <div aria-labelledby="hs-dropdown-hover-event-lang"
+                                                        class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 right-0 rtl:right-auto rtl:left-0 hidden z-10 sm:mt-3 top-auto w-full min-w-44 before:absolute">
+                                                        <div class="message-body max-h-[200px]">
+                                                            <a href="javascript:void(0)"
+                                                                class="dropdown-item px-5 py-3 flex items-center light-dark-hoverbg">
+                                                                <div class="flex gap-2 items-center">
+                                                                    <img src="@@webRoot/assets/images/svgs/icon-flag-us.svg" 
+                                                                    alt="icon"/>
+                                                                    <span
+                                                                        class=" block font-normal  text-bodytext dark:text-darklink">USD</span>
+                                                                </div>
+                                                            </a>
+
+                                                            <a href="javascript:void(0)"
+                                                                class="dropdown-item px-5 py-3 flex items-center light-dark-hoverbg">
+                                                                <div class="flex gap-2 items-center">
+                                                                    <img src="@@webRoot/assets/images/svgs/icon-flag-india.svg" 
+                                                                    alt="icon"/>
+                                                                    <span
+                                                                        class=" block font-normal  text-bodytext dark:text-darklink">INR</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="javascript:void(0)"
+                                                                class="dropdown-item px-5 py-3 flex items-center light-dark-hoverbg">
+                                                                <div class="flex gap-2 items-center">
+                                                                    <img src="@@webRoot/assets/images/svgs/icon-flag-french.svg" 
+                                                                    alt="icon"/>
+                                                                    <span
+                                                                        class=" block font-normal  text-bodytext dark:text-darklink">FRF</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col">
+                                            <div class="-m-1.5 overflow-x-auto">
+                                                <div class="p-1.5 min-w-full inline-block align-middle">
+                                                    <div class="overflow-hidden">
+                                                        <table
+                                                            class="min-w-full divide-y divide-border dark:divide-darkborder">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 ps-0 font-semibold text-dark dark:text-white ">
+                                                                        Collection</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Volume</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        24h</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Floor Price</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody
+                                                                class="divide-y divide-border dark:divide-darkborder">
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <div class="">
+                                                                                <img src="@@webRoot/assets/images/profile/user-5.jpg"
+                                                                                    class=" h-11 w-11 rounded-full"
+                                                                                    alt="user " />
+                                                                            </div>
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Alan Walker Origins</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class=" whitespace-nowrap  p-4">
+                                                                        <div
+                                                                            class="text-dark dark:text-white items-center flex gap-1 ">
+                                                                            <img src="@@webRoot/assets/images/svgs/icon-etherium.svg" 
+                                                                            alt="icon"  class="text-left icon-white ms-1 ">
+                                                                          
+                                                                            18,670.21
+                                                                        </div>
+
+                                                                    </td>
+                                                                    <td class="p-4  text-error">
+                                                                        -20.38%
+                                                                    </td>
+                                                                    <td class="text-dark dark:text-white p-4 ">
+                                                                        $6.8k</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <div class="">
+                                                                                <img src="@@webRoot/assets/images/profile/user-2.jpg"
+                                                                                    class=" h-11 w-11 rounded-full"
+                                                                                    alt="user " />
+                                                                            </div>
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    The StarSharks NFTs</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class=" whitespace-nowrap  p-4">
+                                                                        <div
+                                                                            class="text-dark dark:text-white items-center flex gap-1 ">
+                                                                            <img src="@@webRoot/assets/images/svgs/icon-etherium.svg" 
+                                                                            alt="icon"  class="text-left icon-white ms-1 ">
+                                                                            15,880.20
+                                                                        </div>
+
+                                                                    </td>
+                                                                    <td class="p-4  text-success">
+                                                                        +15.14%
+                                                                    </td>
+                                                                    <td class="text-dark dark:text-white p-4 ">
+                                                                        $5.8k</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <div class="">
+                                                                                <img src="@@webRoot/assets/images/profile/user-3.jpg"
+                                                                                    class=" h-11 w-11 rounded-full"
+                                                                                    alt="user " />
+                                                                            </div>
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Sacred Realm</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class=" whitespace-nowrap  p-4">
+                                                                        <div
+                                                                            class="text-dark dark:text-white items-center flex gap-1 ">
+                                                                            <img src="@@webRoot/assets/images/svgs/icon-etherium.svg" 
+                                                                            alt="icon"  class="text-left icon-white ms-1 ">
+                                                                            14,920.20
+                                                                        </div>
+
+                                                                    </td>
+                                                                    <td class="p-4  text-error">
+                                                                        -10.25%
+                                                                    </td>
+                                                                    <td class="text-dark dark:text-white p-4 ">
+                                                                        $5.2k</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Top NFT Table End--->
+
+                            <!---Curreny card--->
+                            <div class="lg:col-span-4 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card overflow-hidden">
+                                    <img src="@@webRoot/assets/images/nft/nft-bg.jpg" class="w-full" alt="nft" />
+                                    <div class="card-body pt-0 pb-5 text-center">
+                                        <div class="flex justify-center -mt-6">
+                                            <img src="@@webRoot/assets/images/profile/user-5.jpg" alt="nft"
+                                                class="rounded-full border-2 border-white" width="50" />
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0  font-semibold text-dark dark:text-white mt-2">The
+                                                Cat X Takaish</h6>
+                                        </div>
+                                        <div
+                                            class="flex items-center justify-between mt-2 pb-3 border-b border-border dark:border-darkborder">
+                                            <div class="text-start">
+                                                <span class="">Volume</span>
+                                                <h6 class=" font-semibold text-dark dark:text-white">90,015.90
+                                                    USD</h6>
+                                            </div>
+                                            <div class="text-end">
+                                                <span class="">Floor Price</span>
+                                                <h6 class=" font-semibold text-dark dark:text-white">40.00 USD
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-3 pt-3">
+                                            <div
+                                                class="text-white bg-lightgray dark:bg-darkgray rounded-full h-11 w-11 flex items-center justify-center">
+                                                <img src="@@webRoot/assets/images/svgs/icon-etherium.svg" class="opacity-70" 
+                                                    alt="icon"/>    
+                                            </div>
+                                            <div>
+                                                <h6 class=" font-semibold text-dark dark:text-white">1.23 ETH
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">$12,000</span>
+                                            </div>
+                                            <div class="  text-dark dark:text-white text-end ms-auto">
+                                                <span class=" text-error">-6.8%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Curreny card End--->
+
+                            <!---Recent Transactions card--->
+                            <div class="lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body pb-3">
+                                        <div class="flex items-center justify-between mb-6">
+                                            <div>
+                                                <h5 class="card-title">Recent
+                                                    Transactions</h5>
+                                                <p class="card-subtitle">Examining the Risks of
+                                                    Recent Transactions</p>
+                                            </div>
+                                            <div class="sm:mt-0 mt-4">
+                                                <button
+                                                    class="h-10 w-10 text-bodytext dark:text-darklink hover:text-primary light-dark-hoverbg  justify-center items-center rounded-full">
+                                                    <i class="ti ti-dots-vertical text-lg"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-3 py-4 border-b border-border dark:border-darkborder">
+                                            <div
+                                                class="text-white bg-lightgray dark:bg-darkgray rounded-full h-11 w-11 flex items-center justify-center">
+                                                <img src="@@webRoot/assets/images/svgs/icon-etherium.svg" class="opacity-70 h-4 w-4" 
+                                                alt="icon"/> 
+                                            </div>
+                                            <div>
+                                                <h6 class="leading-4">
+                                                    1.23 ETH
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">$12,000</span>
+                                            </div>
+                                            <div class="  text-dark dark:text-white text-end ms-auto">
+                                                <span class=" text-error">-6.8%</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-3 py-4 border-b border-border dark:border-darkborder">
+                                            <div
+                                                class="text-white bg-lightgray dark:bg-darkgray rounded-full h-11 w-11 flex items-center justify-center">
+                                                <img src="@@webRoot/assets/images/svgs/icon-bitcoin.svg"  class="h-4 w-4"
+                                                alt="icon"/> 
+                                            </div>
+                                            <div>
+                                                <h6 class="leading-4">
+                                                    5.23 BTC
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">$5,000</span>
+                                            </div>
+                                            <div class="  text-dark dark:text-white text-end ms-auto">
+                                                <span class=" text-success">+2.30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-3 py-4 ">
+                                            <div
+                                                class="text-white bg-lightgray dark:bg-darkgray rounded-full h-11 w-11 flex items-center justify-center">
+                                                <img src="@@webRoot/assets/images/svgs/icon-xrp.svg" class="h-4 w-4" 
+                                                alt="icon"/> 
+                                            </div>
+                                            <div>
+                                                <h6 class="leading-4">
+                                                    9.20 XRP
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">$6,200</span>
+                                            </div>
+                                            <div class=" text-dark dark:text-white text-end ms-auto">
+                                                <span class=" text-error">-1.0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Recent Transactions card end--->
+
+                            <!---Trending Creator card--->
+                            <div class="lg:col-span-6 md:col-span-6 sm:col-span-12 col-span-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="flex items-center justify-between mb-6">
+                                            <div>
+                                                <h5 class="card-title">Trending
+                                                    Creator</h5>
+                                                <p class="card-subtitle">The Benefits of Being a
+                                                    Trending Creator</p>
+                                            </div>
+                                            <div class="sm:mt-0 mt-4">
+                                                <button
+                                                    class="h-10 w-10 text-bodytext dark:text-darklink hover:text-primary light-dark-hoverbg  justify-center items-center rounded-full">
+                                                    <i class="ti ti-dots-vertical text-lg"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-3 py-4 border-b border-border dark:border-darkborder">
+                                            <img src="@@webRoot/assets/images/profile/user-5.jpg"
+                                                class="rounded-full h-10 w-10" alt="user" />
+                                            <div>
+                                                <h6 class="leading-4">
+                                                    Mike Johs
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">12.200 Items</span>
+                                            </div>
+                                            <div class="text-end ms-auto">
+                                                <h6 class="leading-4">
+                                                    $300,000+
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">Total USD</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-3 py-4 border-b border-border dark:border-darkborder">
+                                            <img src="@@webRoot/assets/images/profile/user-3.jpg"
+                                                class="rounded-full h-10 w-10" alt="user" />
+                                            <div>
+                                                <h6 class="leading-4">
+                                                    Aston lyn
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">10.150 Items</span>
+                                            </div>
+                                            <div class="text-end ms-auto">
+                                                <h6 class="leading-4">
+                                                    $250,000+
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">Total USD</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-3 py-4 ">
+                                            <img src="@@webRoot/assets/images/profile/user-8.jpg"
+                                                class="rounded-full h-10 w-10" alt="user" />
+                                            <div>
+                                                <h6 class="leading-4">
+                                                    George irvin
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">10.100 Items</span>
+                                            </div>
+                                            <div class="text-end ms-auto">
+                                                <h6 class="leading-4">
+                                                    $230,000+
+                                                </h6>
+                                                <span class="text-xs text-bodytext dark:text-darklink">Total USD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Trending Creator card end--->
+
+                            <!---Recent History card--->
+                            <div class="col-span-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-6">
+                                            <h5 class="card-title">Recent History
+                                            </h5>
+                                            <p class="card-subtitle">The Impact of 9/11 on the
+                                                World</p>
+                                        </div>
+
+                                        <div class="flex flex-col">
+                                            <div class="-m-1.5 overflow-x-auto">
+                                                <div class="p-1.5 min-w-full inline-block align-middle">
+                                                    <div class="overflow-hidden">
+                                                        <table
+                                                            class="min-w-full divide-y divide-border dark:divide-darkborder">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 ps-0 font-semibold text-dark dark:text-white ">
+                                                                        Item</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Event</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        From - To</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Amount</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Value</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Date</th>
+                                                                    <th scope="col"
+                                                                        class="text-left rtl:text-right  p-4 font-semibold text-dark dark:text-white ">
+                                                                        Link</th>
+
+
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody
+                                                                class="divide-y divide-border dark:divide-darkborder">
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <div class="">
+                                                                                <img src="@@webRoot/assets/images/blog/blog-img1.jpg"
+                                                                                    class=" h-[50px] w-[50px] rounded-md"
+                                                                                    alt="user " />
+                                                                            </div>
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Quantum Ape</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-4">
+                                                                        <span
+                                                                            class="badge-md bg-lightprimary dark:bg-darkprimary text-primary">Purchase</span>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-right rtl:text-left">
+
+                                                                        <div class="flex items-center gap-2">
+                                                                            <img src="@@webRoot/assets/images/profile/user-5.jpg"
+                                                                                width="25" alt="user1"
+                                                                                class="rounded-full" />
+                                                                            <span
+                                                                                class=" text-dark dark:text-white">John</span>
+                                                                            <span>
+                                                                                <i
+                                                                                    class="ti ti-arrow-right text-success"></i>
+                                                                            </span>
+                                                                            <img src="@@webRoot/assets/images/profile/user-2.jpg"
+                                                                                width="25" alt="user1"
+                                                                                class="rounded-full" />
+                                                                            <span
+                                                                                class=" text-dark dark:text-white">Deo</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-left rtl:text-right">
+                                                                        4
+                                                                    </td>
+                                                                    <td class=" whitespace-nowrap  p-4">
+                                                                        <div
+                                                                            class="text-dark dark:text-white items-center flex gap-1 ">
+                                                                            <img src="@@webRoot/assets/images/svgs/icon-etherium.svg"  class="h-4 w-4 icon-white"
+                                                                            alt="icon"/> 
+                                                                            16 ETH
+                                                                        </div>
+
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-left rtl:text-right">
+                                                                        13 July, 2024
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-bodytext dark:text-darklink p-4 text-left rtl:text-right">
+
+                                                                        <div class="hs-dropdown relative inline-flex">
+                                                                            <button id="hs-dropdown-custom-icon-trigger " type="button"
+                                                                                class="hs-dropdown-toggle flex justify-center items-center ">
+                                                                                <i class="ti ti-dots text-bodytext dark:text-darklink hover:text-primary"></i>
+                                                                            </button>
+                            
+                                                                            <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0  hidden min-w-40"
+                                                                                aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                                                <div class="flex flex-col">
+                                                                                    <div
+                                                                                        class="py-2 px-4 light-dark-hoverbg ">
+                                                                                        <a class=" flex gap-2 items-center "
+                                                                                            href="#">
+                                                                                            <i class="ti ti-link text-base"></i>https://www.abc.com/sfsdf767s </a>
+                                                                                           </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <div class="">
+                                                                                <img src="@@webRoot/assets/images/blog/blog-img2.jpg"
+                                                                                    class=" h-[50px] w-[50px] rounded-md"
+                                                                                    alt="user " />
+                                                                            </div>
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Bored Ape</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-4">
+                                                                        <span
+                                                                            class="badge-md bg-lighterror dark:bg-darkerror text-error">Purchase</span>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-right rtl:text-left">
+
+                                                                        <div class="flex items-center gap-2">
+                                                                            <img src="@@webRoot/assets/images/profile/user-3.jpg"
+                                                                                width="25" alt="user1"
+                                                                                class="rounded-full" />
+                                                                            <span
+                                                                                class=" text-dark dark:text-white">Liam</span>
+                                                                            <span>
+                                                                                <i
+                                                                                    class="ti ti-arrow-right text-error"></i>
+                                                                            </span>
+                                                                            <img src="@@webRoot/assets/images/profile/user-4.jpg"
+                                                                                width="25" alt="user1"
+                                                                                class="rounded-full" />
+                                                                            <span
+                                                                                class=" text-dark dark:text-white">Noah</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-left rtl:text-right">
+                                                                        4
+                                                                    </td>
+                                                                    <td class=" whitespace-nowrap  p-4">
+                                                                        <div
+                                                                            class="text-dark dark:text-white items-center flex gap-1 ">
+                                                                             <img src="@@webRoot/assets/images/svgs/icon-etherium.svg"  class="h-4 w-4 icon-white"
+                                                alt="icon"/> 
+                                                                            8 ETH
+                                                                        </div>
+
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-left rtl:text-right">
+                                                                        1 Aug, 2024
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-bodytext dark:text-darklink p-4 text-left rtl:text-right">
+
+                                                                        <div class="hs-dropdown relative inline-flex">
+                                                                            <button id="hs-dropdown-custom-icon-trigger " type="button"
+                                                                                class="hs-dropdown-toggle flex justify-center items-center ">
+                                                                                <i class="ti ti-dots text-bodytext dark:text-darklink hover:text-primary"></i>
+                                                                            </button>
+                            
+                                                                            <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0  hidden min-w-40"
+                                                                                aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                                                <div class="flex flex-col">
+                                                                                    <div
+                                                                                        class="py-2 px-4 light-dark-hoverbg ">
+                                                                                        <a class=" flex gap-2 items-center "
+                                                                                            href="#">
+                                                                                            <i class="ti ti-link text-base"></i>https://www.abc.com/sfsdf767s </a>
+                                                                                           </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <div class="">
+                                                                                <img src="@@webRoot/assets/images/blog/blog-img3.jpg"
+                                                                                    class=" h-[50px] w-[50px] rounded-md"
+                                                                                    alt="user " />
+                                                                            </div>
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Space Ape</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-4">
+                                                                        <span
+                                                                            class="badge-md bg-lightsuccess dark:bg-darksuccess  text-success">List</span>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-right rtl:text-left">
+
+                                                                        <div class="flex items-center gap-2">
+                                                                            <img src="@@webRoot/assets/images/profile/user-4.jpg"
+                                                                                width="25" alt="user1"
+                                                                                class="rounded-full" />
+                                                                            <span
+                                                                                class=" text-dark dark:text-white">Oliver</span>
+                                                                            <span>
+                                                                                <i
+                                                                                    class="ti ti-arrow-left text-error"></i>
+                                                                            </span>
+                                                                            <img src="@@webRoot/assets/images/profile/user-5.jpg"
+                                                                                width="25" alt="user1"
+                                                                                class="rounded-full" />
+                                                                            <span
+                                                                                class=" text-dark dark:text-white">Elijah</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-left rtl:text-right">
+                                                                        4
+                                                                    </td>
+                                                                    <td class=" whitespace-nowrap  p-4">
+                                                                        <div
+                                                                            class="text-dark dark:text-white items-center flex gap-1 ">
+                                                                            <img src="@@webRoot/assets/images/svgs/icon-etherium.svg"  class="h-4 w-4 icon-white"
+                                                                            alt="icon"/> 
+                                                                            9 ETH
+                                                                        </div>
+
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-left rtl:text-right">
+                                                                        12 Jan, 2024
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-bodytext dark:text-darklink p-4 text-left rtl:text-right">
+
+                                                                        <div class="hs-dropdown relative inline-flex">
+                                                                            <button id="hs-dropdown-custom-icon-trigger " type="button"
+                                                                                class="hs-dropdown-toggle flex justify-center items-center ">
+                                                                                <i class="ti ti-dots text-bodytext dark:text-darklink hover:text-primary"></i>
+                                                                            </button>
+                            
+                                                                            <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0  hidden min-w-40"
+                                                                                aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                                                <div class="flex flex-col">
+                                                                                    <div
+                                                                                        class="py-2 px-4 light-dark-hoverbg ">
+                                                                                        <a class=" flex gap-2 items-center "
+                                                                                            href="#">
+                                                                                            <i class="ti ti-link text-base"></i>https://www.abc.com/sfsdf767s </a>
+                                                                                           </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-4 ps-0 whitespace-nowrap">
+                                                                        <div class="flex gap-3 items-center">
+                                                                            <div class="">
+                                                                                <img src="@@webRoot/assets/images/blog/blog-img4.jpg"
+                                                                                    class=" h-[50px] w-[50px] rounded-md"
+                                                                                    alt="user " />
+                                                                            </div>
+                                                                            <div>
+                                                                                <h6
+                                                                                    class="mb-1">
+                                                                                    Fancy Bears</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-4">
+                                                                        <span
+                                                                            class="badge-md bg-lightprimary dark:bg-darkprimary text-primary">Purchase</span>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-right rtl:text-left">
+
+                                                                        <div class="flex items-center gap-2">
+                                                                            <img src="@@webRoot/assets/images/profile/user-5.jpg"
+                                                                                width="25" alt="user1"
+                                                                                class="rounded-full" />
+                                                                            <span
+                                                                                class=" text-dark dark:text-white">James</span>
+                                                                            <span>
+                                                                                <i
+                                                                                    class="ti ti-arrow-right text-success"></i>
+                                                                            </span>
+                                                                            <img src="@@webRoot/assets/images/profile/user-2.jpg"
+                                                                                width="25" alt="user1"
+                                                                                class="rounded-full" />
+                                                                            <span
+                                                                                class=" text-dark dark:text-white">Lucas</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-left rtl:text-right">
+                                                                        4
+                                                                    </td>
+                                                                    <td class=" whitespace-nowrap  p-4">
+                                                                        <div
+                                                                            class="text-dark dark:text-white items-center flex gap-1 ">
+                                                                            <img src="@@webRoot/assets/images/svgs/icon-etherium.svg"  class="h-4 w-4 icon-white"
+                                                                            alt="icon"/> 
+                                                                            10 ETH
+                                                                        </div>
+
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-dark dark:text-white p-4 text-left rtl:text-right">
+                                                                        1 Feb, 2024
+                                                                    </td>
+                                                                    <td
+                                                                        class=" whitespace-nowrap text-bodytext dark:text-darklink p-4 text-left rtl:text-right">
+
+                                                                        <div class="hs-dropdown relative inline-flex">
+                                                                            <button id="hs-dropdown-custom-icon-trigger " type="button"
+                                                                                class="hs-dropdown-toggle flex justify-center items-center ">
+                                                                                <i class="ti ti-dots text-bodytext dark:text-darklink hover:text-primary"></i>
+                                                                            </button>
+                            
+                                                                            <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0  hidden min-w-40"
+                                                                                aria-labelledby="hs-dropdown-custom-icon-trigger">
+                                                                                <div class="flex flex-col">
+                                                                                    <div
+                                                                                        class="py-2 px-4 light-dark-hoverbg ">
+                                                                                        <a class=" flex gap-2 items-center "
+                                                                                            href="#">
+                                                                                            <i class="ti ti-link text-base"></i>https://www.abc.com/sfsdf767s </a>
+                                                                                           </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!---Recent History card end--->
+
+                        </div>
+                    </div>
+                <!-- Main Content End -->
+            </div>
+        </div>
+        <!--end of project-->
+    </main>
+    @@include("partials/header-components/mobile-menu.html")
+    @@include("partials/header-components/dd-searchbar.html")
+    @@include("partials/header-components/dd-cart.html")
+    @@include("partials/customizer.html")
+    <script src="@@webRoot/assets/js/vendor.min.js"></script>
+    @@include("partials/scripts.html")
+    <script src="@@webRoot/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="@@webRoot/assets/js/dashboards/dashboard3.js"></script>
+</body>
+
+</html>
