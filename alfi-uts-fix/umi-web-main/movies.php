@@ -3,13 +3,17 @@
 session_start();
 require_once "db.php";
 
-// Cek jika user belum login, lempar ke halaman login
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
-// Ambil data user dari sesi
+// cek role admin
+if ($_SESSION['role'] !== 'admin') {
+    header("Location: index.php");
+    exit;
+}
+
 $user_id = $_SESSION['user_id'];
 $user_fullname = $_SESSION['fullname'];
 
@@ -17,7 +21,6 @@ $user_fullname = $_SESSION['fullname'];
 // 2. LOGIKA PENANGANAN POST (CREATE, UPDATE, DELETE)
 // =============================================================
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // (Logika CRUD film sama seperti sebelumnya)
     $action = $_POST['action'] ?? '';
     try {
         if ($action === 'create_movie') {
@@ -62,90 +65,100 @@ try {
   <title>🎬 Admin - Manage Movies</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .table-form { display: flex; gap: 8px; justify-content: start; }
-    .action-cell { min-width: 190px; }
-    .poster-preview { max-width: 60px; max-height: 90px; object-fit: cover; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 8px; display: block; }
+    body { background-color: #f8f9fa; }
+    .poster-preview { max-width: 60px; max-height: 90px; object-fit: cover; border-radius: 6px; border: 1px solid #ccc; }
+    .card { border-radius: 1rem; }
+    .table thead th { background-color: #212529; color: #fff; }
+    .table tbody tr:hover { background-color: #fffbea; }
+    .btn-warning { color: #212529; font-weight: 600; }
   </style>
 </head>
 <body class="bg-light">
 
-  <header class="bg-dark text-white py-3 mb-4">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="h3 mb-0">🎬 Admin Panel</h1>
-      <nav>
-        <ul class="nav align-items-center">
-          <li class="nav-item"><a href="booking.php" class="nav-link text-white">Bookings</a></li>
-          <li class="nav-item"><a href="movies.php" class="nav-link active text-warning fw-bold">Movies</a></li>
-          <li class="nav-item"><a href="users.php" class="nav-link text-white">Users</a></li>
-          <li class="nav-item"><a href="admin.php" class="nav-link text-white">All Bookings</a></li>
-          <li class="nav-item ms-3">
-            <span class="navbar-text text-white me-2">Hi, <?= htmlspecialchars($user_fullname) ?></span>
-            <a href="logout.php" class="btn btn-outline-warning btn-sm">Logout</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main class="container mb-5">
-    <section class="add-movie my-4 card p-4 shadow-sm">
-      <h2 class="mb-3">➕ Add New Movie</h2>
-      <form method="POST" action="movies.php">
-        <input type="hidden" name="action" value="create_movie">
-        <div class="row">
-          <div class="col-md-5 mb-3"><label for="title" class="form-label">Movie Title</label><input type="text" id="title" name="title" class="form-control" required></div>
-          <div class="col-md-2 mb-3"><label for="duration" class="form-label">Duration (min)</label><input type="number" id="duration" name="duration" class="form-control" min="1" value="120" required></div>
-          <div class="col-md-5 mb-3"><label for="poster_url" class="form-label">Poster URL</label><input type="text" id="poster_url" name="poster_url" class="form-control" placeholder="assets/movie4.jpg" required></div>
-        </div>
-        <div class="text-end"><button type="submit" class="btn btn-success fw-bold">Add Movie</button></div>
-      </form>
-    </section>
+<!-- Navbar -->
+<?php include 'navbar.php'; ?>
 
-    <hr>
-    <section class="mt-5">
-      <h3>📋 Movie List</h3>
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped mt-3 align-middle">
-          <thead class="table-dark">
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Duration (min)</th>
-              <th>Poster (Preview & URL)</th>
-              <th class="text-center">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($movies as $movie): ?>
-            <tr>
-              <form method="POST" action="movies.php" class="table-form">
-                <input type="hidden" name="action" value="update_movie">
-                <input type="hidden" name="movie_id" value="<?= $movie['id'] ?>">
-                <td><?= $movie['id'] ?></td>
-                <td><input type="text" name="title" class="form-control" value="<?= htmlspecialchars($movie['title']) ?>" required></td>
-                <td><input type="number" name="duration" class="form-control" value="<?= htmlspecialchars($movie['duration_minutes']) ?>" min="1" required></td>
-                <td>
-                  <img src="<?= htmlspecialchars($movie['poster_url']) ?>" alt="Poster" class="poster-preview" onerror="this.style.display='none'">
-                  <input type="text" name="poster_url" class="form-control" value="<?= htmlspecialchars($movie['poster_url']) ?>" required>
-                </td>
-                <td class="text-center action-cell">
-                  <div class="table-form">
-                    <button type="submit" class="btn btn-sm btn-primary">✏️ Update</button>
-                    <button type="button" class="btn btn-sm btn-danger" onclick="confirmDelete(this.form)">🗑 Delete</button>
-                  </div>
-                </td>
-              </form>
-              <form method="POST" action="movies.php" style="display: none;">
-                  <input type="hidden" name="action" value="delete_movie">
-                  <input type="hidden" name="movie_id" value="<?= $movie['id'] ?>">
-              </form>
-            </tr>
-            <?php endforeach; ?>
-            <?php if (empty($movies)): ?><tr><td colspan="5" class="text-center text-muted">No movies found.</td></tr><?php endif; ?>
-          </tbody>
-        </table>
+<main class="container mt-5 mb-5">
+ <section class="card shadow-sm border-0 p-4">
+  <h2 class="fw-bold mb-4 text-dark">➕ Add New Movie</h2>
+  <form method="POST" action="movies.php">
+    <input type="hidden" name="action" value="create_movie">
+    <div class="row g-3">
+      <div class="col-md-5">
+        <label for="title" class="form-label fw-semibold">Movie Title</label>
+        <input type="text" id="title" name="title" class="form-control" required>
       </div>
-    </section>
-  </main>
+      <div class="col-md-2">
+        <label for="duration" class="form-label fw-semibold">Duration (min)</label>
+        <input type="number" id="duration" name="duration" class="form-control" min="1" value="120" required>
+      </div>
+      <div class="col-md-5">
+        <label for="poster_url" class="form-label fw-semibold">Poster URL</label>
+        <input type="text" id="poster_url" name="poster_url" class="form-control" placeholder="assets/movie4.jpg" required>
+      </div>
+    </div>
+    <div class="mt-4">
+      <button type="submit" class="btn btn-warning px-4 fw-semibold">Add Movie</button>
+    </div>
+  </form>
+</section>
+
+
+  <section class="mt-5">
+    <h3 class="fw-bold mb-3 text-dark">📋 Movie List</h3>
+    <div class="table-responsive shadow-sm">
+      <table class="table table-bordered table-striped align-middle">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Duration (min)</th>
+            <th>Poster (Preview & URL)</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($movies as $movie): ?>
+<tr>
+  <td><?= $movie['id'] ?></td>
+  <td><?= htmlspecialchars($movie['title']) ?></td>
+  <td><?= htmlspecialchars($movie['duration_minutes']) ?></td>
+  <td>
+    <img src="<?= htmlspecialchars($movie['poster_url']) ?>" alt="Poster" class="poster-preview mb-2">
+    <br>
+    <?= htmlspecialchars($movie['poster_url']) ?>
+  </td>
+  <td class="text-center">
+    <form method="POST" action="movies.php" style="display:inline-block;">
+      <input type="hidden" name="action" value="update_movie">
+      <input type="hidden" name="movie_id" value="<?= $movie['id'] ?>">
+      <button type="button" class="btn btn-sm btn-primary" onclick="showUpdateModal(<?= $movie['id'] ?>)">✏️ Update</button>
+    </form>
+
+    <form method="POST" action="movies.php" style="display:inline-block;" onsubmit="return confirm('Are you sure you want to delete this movie?');">
+      <input type="hidden" name="action" value="delete_movie">
+      <input type="hidden" name="movie_id" value="<?= $movie['id'] ?>">
+      <button type="submit" class="btn btn-sm btn-danger">🗑 Delete</button>
+    </form>
+  </td>
+</tr>
+<?php endforeach; ?>
+
+          <?php if (empty($movies)): ?>
+            <tr><td colspan="5" class="text-center text-muted">No movies found.</td></tr>
+          <?php endif; ?>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<!--Footer-->
+<footer class="text-center text-light py-3 border-top border-warning bg-black fixed-bottom">
+  <p class="mb-0 small fw-semibold">
+    &copy; <?= date('Y') ?> <span class="text-warning">Movie Ticketing</span> — All rights reserved.
+  </p>
+</footer>
 
 <script>
 function confirmDelete(form) {
