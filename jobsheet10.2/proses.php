@@ -1,6 +1,7 @@
 <?php
 include('koneksi.php');
 
+/* ----------------------- TAMBAH DATA ----------------------- */
 if (isset($_GET['aksi']) && $_GET['aksi'] == 'tambah') {
 
     // Ambil data dari form
@@ -24,6 +25,8 @@ if (isset($_GET['aksi']) && $_GET['aksi'] == 'tambah') {
     mysqli_close($koneksi);
 }
 
+
+/* ----------------------- UBAH DATA ----------------------- */
 elseif (isset($_GET['aksi']) && $_GET['aksi'] == 'ubah') {
 
     if (isset($_POST['id'])) {
@@ -53,6 +56,37 @@ elseif (isset($_GET['aksi']) && $_GET['aksi'] == 'ubah') {
     }
 
     mysqli_close($koneksi);
+}
+
+
+/* ----------------------- HAPUS DATA ----------------------- */
+elseif (isset($_GET['aksi']) && $_GET['aksi'] == 'hapus') {
+
+    if (isset($_GET['id'])) {
+
+        $id = $_GET['id'];
+
+        $query = "DELETE FROM anggota WHERE id = $id";
+
+        if (mysqli_query($koneksi, $query)) {
+            header("Location: index.php");
+            exit();
+        } else {
+            echo "Gagal menghapus data: " . mysqli_error($koneksi);
+        }
+
+    } else {
+        echo "ID tidak valid.";
+    }
+
+    mysqli_close($koneksi);
+}
+
+
+/* -------------- JIKA AKSI TIDAK DIKENALI -------------- */
+else {
+    header("Location: index.php");
+    exit();
 }
 
 ?>
