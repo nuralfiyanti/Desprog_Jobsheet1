@@ -1,5 +1,5 @@
 <?php 
-
+// Sertakan auth.php untuk membuat dan mengaktifkan session & CSRF Token
 include('auth.php'); 
 ?>
 
@@ -13,11 +13,8 @@ include('auth.php');
     <meta name="csrf-token" content="<?= $_SESSION['csrf_token'] ?>">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-    
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTIWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
@@ -31,34 +28,38 @@ include('auth.php');
 
     <div class="card mb-4 shadow-sm">
         <div class="card-body">
-            <form id="form-anggota">
+            <form id="form-anggota"> 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="nama">Nama:</label>
-                        <input type="text" id="nama" name="nama" class="form-control" required="true">
+                        <input type="text" id="nama" name="nama" class="form-control">
+                        <p class="text-danger" id="err_nama"></p>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Jenis Kelamin:</label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki" value="L" required>
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki" value="L">
                             <label class="form-check-label" for="laki">Laki-laki</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="jenis_kelamin" id="perempuan" value="P">
                             <label class="form-check-label" for="perempuan">Perempuan</label>
                         </div>
+                        <p class="text-danger" id="err_jenis_kelamin"></p>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="alamat">Alamat:</label>
-                    <input type="text" id="alamat" name="alamat" class="form-control" required="true">
+                    <input type="text" id="alamat" name="alamat" class="form-control">
+                    <p class="text-danger" id="err_alamat"></p>
                 </div>
                 
                 <div class="form-group">
                     <label for="no_telp">No. Telp:</label>
-                    <input type="text" id="no_telp" name="no_telp" class="form-control" required="true">
+                    <input type="text" id="no_telp" name="no_telp" class="form-control">
+                    <p class="text-danger" id="err_no_telp"></p>
                 </div>
 
                 <input type="hidden" name="aksi" id="aksi" value="tambah">
@@ -67,7 +68,7 @@ include('auth.php');
                 <hr>
                 
                 <div class="form-group text-right">
-                    <button type="submit" id="btn-simpan" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
+                    <button type="button" id="btn-simpan" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                     <button type="reset" id="btn-reset" class="btn btn-secondary d-none">Batal</button>
                 </div>
             </form>
@@ -143,10 +144,9 @@ $(document).ready(function() {
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "data.php", // Panggil file data.php
+            "url": "data.php",
             "type": "POST"
         },
-        // Definisikan kolom untuk DataTables Server-Side Processing
         "columns": [
             {"data": "no", "orderable": false, "searchable": false},
             {"data": "nama"},
@@ -157,51 +157,105 @@ $(document).ready(function() {
         ]
     });
 
-    // 2. LOGIKA CREATE & UPDATE (SUBMIT FORM)
-    $('#form-anggota').on('submit', function(e) {
-        e.preventDefault();
-        let dataForm = $(this).serialize(); // Ambil semua data form
-        let aksiUrl = $('#aksi').val(); // 'tambah' atau 'edit'
+    // Fungsi Reset Pesan Error
+    function resetErrors() {
+        $("#err_nama").html("");
+        $("#err_jenis_kelamin").html("");
+        $("#err_alamat").html("");
+        $("#err_no_telp").html("");
+    }
 
-        $.ajax({
-            url: "proses.php", 
-            type: "POST",
-            data: dataForm,
-            dataType: "json",
-            success: function(response) {
-                if (response.status === 'success') {
-                    // Reset form dan refresh tabel
-                    $('#form-anggota')[0].reset();
-                    $('#aksi').val('tambah'); // Kembalikan aksi ke 'tambah'
-                    $('#btn-simpan').html('<i class="fa fa-save"></i> Simpan');
-                    $('#btn-reset').addClass('d-none');
-                    
-                    tabelAnggota.ajax.reload(null, false); // Reload DataTables
-                    alert((aksiUrl == 'tambah' ? 'Data berhasil ditambahkan!' : 'Data berhasil diupdate!'));
-                } else {
-                    alert('Gagal: ' + response.message);
+    // Fungsi Reset Form & UI ke mode Tambah
+    function resetFormUI() {
+        $('#form-anggota')[0].reset();
+        $('#aksi').val('tambah'); 
+        $('#id').val(''); // Pastikan ID dikosongkan
+        $('#btn-simpan').html('<i class="fa fa-save"></i> Simpan');
+        $('#btn-reset').addClass('d-none');
+        resetErrors(); // Bersihkan pesan error saat batal
+    }
+
+
+    // 2. LOGIKA CREATE & UPDATE (TOMBOL SIMPAN / UPDATE)
+    $("#btn-simpan").click(function(e) {
+        e.preventDefault(); 
+        resetErrors(); 
+
+        let nama = $("#nama").val().trim();
+        let alamat = $("#alamat").val().trim();
+        let no_telp = $("#no_telp").val().trim();
+        let is_jenkel_checked = $("#laki").is(":checked") || $("#perempuan").is(":checked");
+        let aksiUrl = $('#aksi').val(); // 'tambah' atau 'edit'
+        
+        let isValid = true;
+
+        // Validasi
+        if (nama === "") {
+            $("#err_nama").html("Nama Harus Diisi");
+            isValid = false;
+        }
+        if (alamat === "") {
+            $("#err_alamat").html("Alamat Harus Diisi");
+            isValid = false;
+        }
+        if (no_telp === "") {
+            $("#err_no_telp").html("No Telepon Harus Diisi");
+            isValid = false;
+        }
+        if (!is_jenkel_checked) {
+            $("#err_jenis_kelamin").html("Jenis Kelamin Harus Dipilih");
+            isValid = false;
+        }
+
+        // Jika validasi sukses, kirim AJAX
+        if (isValid) {
+            let dataForm = $('#form-anggota').serialize(); 
+
+            $.ajax({
+                type: 'POST',
+                url: "form_action.php", // File yang menangani CREATE dan UPDATE
+                data: dataForm,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        resetFormUI(); // Reset form dan UI ke mode 'tambah'
+                        tabelAnggota.ajax.reload(null, false);
+                        alert((aksiUrl == 'tambah' ? 'Data berhasil ditambahkan!' : 'Data berhasil diupdate!'));
+                    } else {
+                         alert('Gagal: ' + response.message);
+                    }
+                },
+                error: function (xhr) {
+                    alert('Terjadi kesalahan server: ' + (xhr.responseJSON && xhr.responseJSON.error ? xhr.responseJSON.error : 'Terjadi Kesalahan!'));
                 }
-            },
-            error: function(xhr) {
-                alert('Terjadi kesalahan server: ' + xhr.responseJSON.error);
-            }
-        });
+            });
+        }
     });
 
     // 3. LOGIKA GET DATA UNTUK EDIT
     $('#example tbody').on('click', '.edit_data', function() {
-        let id = $(this).attr('id'); // Ambil ID dari atribut ID tombol
+        // Pindah ke atas form
+        $('html, body').animate({ scrollTop: 0}, 'slow');
+        
+        let id = $(this).attr('id'); 
         
         $.ajax({
-            url: "proses.php",
-            type: "GET",
-            data: { aksi: 'getDataById', id: id },
+            url: "get_data.php", // Menggunakan get_data.php
+            type: "POST", // Diubah dari GET ke POST sesuai soal
+            data: { id: id },
             dataType: "json",
             success: function(data) {
+                resetErrors(); // Bersihkan error form lama
+                
                 // Isi form dengan data yang didapatkan
                 $('#id').val(data.id);
                 $('#nama').val(data.nama);
-                $(`input[name="jenis_kelamin"][value="${data.jenis_kelamin}"]`).prop('checked', true);
+                // Menentukan radio button
+                if (data.jenis_kelamin === 'L') {
+                    $('#laki').prop('checked', true);
+                } else {
+                    $('#perempuan').prop('checked', true);
+                }
                 $('#alamat').val(data.alamat);
                 $('#no_telp').val(data.no_telp);
                 
@@ -209,46 +263,43 @@ $(document).ready(function() {
                 $('#aksi').val('edit');
                 $('#btn-simpan').html('<i class="fa fa-edit"></i> Update');
                 $('#btn-reset').removeClass('d-none');
+            },
+            error: function(xhr) {
+                alert('Gagal mengambil data untuk edit.');
             }
         });
     });
 
     // Tombol Batal Edit
     $('#btn-reset').on('click', function() {
-        $('#form-anggota')[0].reset();
-        $('#aksi').val('tambah');
-        $('#btn-simpan').html('<i class="fa fa-save"></i> Simpan');
-        $(this).addClass('d-none');
+        resetFormUI();
     });
 
-    // 4. LOGIKA DELETE (AJAX & Modal)
+    // 4. LOGIKA DELETE (AJAX Langsung tanpa Modal - Diperbarui dari soal 6.4)
+    // Catatan: Logika modal delete lama masih ada di HTML, tapi kita gunakan AJAX langsung sesuai soal 6.4 untuk konsistensi
     $('#example tbody').on('click', '.hapus_data', function() {
         let id = $(this).attr('id');
-        $('#delete-id').val(id); // Simpan ID di modal hidden input
-        $('#hapusModal').modal('show');
-    });
 
-    $('#btn-konfirmasi-hapus').on('click', function() {
-        let id = $('#delete-id').val();
-
-        $.ajax({
-            url: "proses.php",
-            type: "POST",
-            data: { aksi: 'hapus', id: id },
-            dataType: "json",
-            success: function(response) {
-                if (response.status === 'success') {
-                    $('#hapusModal').modal('hide');
-                    tabelAnggota.ajax.reload(null, false);
-                    alert('Data berhasil dihapus!');
-                } else {
-                    alert('Gagal: ' + response.message);
+        // Menggunakan Konfirmasi sederhana (sesuai logika soal 6.4)
+        if(confirm("Apakah Anda yakin ingin menghapus data ini?")) {
+            $.ajax({
+                url: "hapus_data.php", // Menggunakan hapus_data.php
+                type: "POST",
+                data: { id: id },
+                dataType: "json",
+                success: function(response) {
+                    if (response.status === 'success') {
+                        tabelAnggota.ajax.reload(null, false);
+                        alert('Data berhasil dihapus!');
+                    } else {
+                        alert('Gagal: ' + response.message);
+                    }
+                },
+                error: function(xhr) {
+                    alert('Terjadi kesalahan server saat menghapus data.');
                 }
-            },
-            error: function(xhr) {
-                 alert('Terjadi kesalahan server: ' + xhr.responseJSON.error);
-            }
-        });
+            });
+        }
     });
 });
 </script>
