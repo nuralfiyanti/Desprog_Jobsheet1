@@ -1,5 +1,5 @@
 <?php 
-// Sertakan auth.php untuk membuat dan mengaktifkan session & CSRF Token
+
 include('auth.php'); 
 ?>
 
@@ -241,11 +241,11 @@ $(document).ready(function() {
         
         $.ajax({
             url: "get_data.php", // Menggunakan get_data.php
-            type: "POST", // Diubah dari GET ke POST sesuai soal
+            type: "POST", 
             data: { id: id },
             dataType: "json",
             success: function(data) {
-                resetErrors(); // Bersihkan error form lama
+                resetErrors(); 
                 
                 // Isi form dengan data yang didapatkan
                 $('#id').val(data.id);
@@ -275,15 +275,13 @@ $(document).ready(function() {
         resetFormUI();
     });
 
-    // 4. LOGIKA DELETE (AJAX Langsung tanpa Modal - Diperbarui dari soal 6.4)
-    // Catatan: Logika modal delete lama masih ada di HTML, tapi kita gunakan AJAX langsung sesuai soal 6.4 untuk konsistensi
+    // 4. LOGIKA DELETE 
     $('#example tbody').on('click', '.hapus_data', function() {
         let id = $(this).attr('id');
 
-        // Menggunakan Konfirmasi sederhana (sesuai logika soal 6.4)
         if(confirm("Apakah Anda yakin ingin menghapus data ini?")) {
             $.ajax({
-                url: "hapus_data.php", // Menggunakan hapus_data.php
+                url: "hapus_data.php", 
                 type: "POST",
                 data: { id: id },
                 dataType: "json",
@@ -299,6 +297,24 @@ $(document).ready(function() {
                     alert('Terjadi kesalahan server saat menghapus data.');
                 }
             });
+        }
+    });
+});
+
+$(document).on('click', '.hapus_data', function() {
+    var id = $(this).attr('id');
+
+    if (!confirm("Yakin ingin menghapus data ini?")) return;
+
+    $.ajax({
+        type: 'POST',
+        url: "hapus_data.php",
+        data: { id: id },
+        success: function(response) {
+            $('#example').DataTable().ajax.reload(); // refresh tabel
+        },
+        error: function(xhr) {
+            console.log(xhr.responseText);
         }
     });
 });
