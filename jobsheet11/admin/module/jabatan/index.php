@@ -105,7 +105,7 @@ require 'template/menu.php';
                            <i class="fa fa-pencil-square-o"></i> Edit
                         </a>
 
-                        <a href="../../../fungsi/hapus.php?jabatan=hapus&id=<?= $row['id']; ?>"
+                        <a href="fungsi/hapus.php?jabatan=hapus&id=<?= $row['id']; ?>"
                            onclick="return confirm('Hapus Data Jabatan ?');"
                            class="btn btn-danger btn-xs">
                            <i class="fa fa-trash-o"></i> Hapus
@@ -155,8 +155,6 @@ require 'template/menu.php';
         </button>
     </div>
 </form>
-
-
 </div>
 </div>
 </div>
