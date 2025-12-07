@@ -14,15 +14,16 @@ $query = "SELECT username, level, salt, password AS hashed_password
 
 $result = mysqli_query($koneksi, $query);
 $row = mysqli_fetch_assoc($result);
-mysqli_close($koneksi);
 
 if ($row) {
 
     $salt = $row['salt'];
     $hashed_password = $row['hashed_password'];
 
+    // gabungkan salt + password input user
     $combined_password = $salt . $password;
 
+    // verifikasi hash
     if (password_verify($combined_password, $hashed_password)) {
 
         $_SESSION['username'] = $row['username'];
@@ -30,10 +31,9 @@ if ($row) {
 
         header("Location: index.php");
         exit;
-
     } else {
 
-        pesan('danger', "Login gagal. Password Anda salah.");
+        pesan('danger', "Password salah.");
         header("Location: login.php");
         exit;
     }
