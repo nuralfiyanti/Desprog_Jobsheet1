@@ -12,7 +12,6 @@ if (!empty($_SESSION['username'])) {
         $jabatan    = antiinjection($koneksi, $_POST['jabatan']); 
         $keterangan = antiinjection($koneksi, $_POST['keterangan']);
 
-        // PERBAIKAN UTAMA → kolom harus sesuai database
         $query  = "INSERT INTO jabatan (nama_jabatan, keterangan) 
                    VALUES ('$jabatan', '$keterangan')";
         $hasil  = mysqli_query($koneksi, $query);
