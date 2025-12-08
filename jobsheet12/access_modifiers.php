@@ -25,6 +25,5 @@ class Animal {
 
 $animal = new Animal("Dog", 3, "Brown");
 echo "Name: " . $animal->name . "<br>";
-// echo "Age: " . $animal->getAge(); // Tidak bisa diakses
-// echo "Color: " . $animal->getColor(); // Tidak bisa diakses
+
 ?>
